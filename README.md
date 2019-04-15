@@ -19,6 +19,8 @@ $ git clone https://github.com/yoshi1125hisa/search-railroad-crossing.git
 $ cd search-railroad-crossing
 ```
 
+### ローカル
+
 パッケージのインストールをします。
 
 `npm`もしくは`yarn`を使用してください。
@@ -31,7 +33,7 @@ $ npm install
 $ yarn install
 ```
 
-### browser
+#### browser
 
 ブラウザを起動して確認をします。
 
@@ -41,7 +43,7 @@ $ cordova run browser
 
 実行すると、ブラウザが開き確認できます。
 
-### iOS
+#### iOS
 
 iOSのエミュレータを起動して確認をします。
 
@@ -69,7 +71,9 @@ $ sudo xcodebuild -license
 $ cordova emulate ios
 ```
 
-### Android
+Podfileなどのインストールでも対応できるそうですが、あまり詳しくないため割愛します。
+
+#### Android
 
 Androidのエミュレータを起動して確認をします。
 
@@ -113,3 +117,7 @@ $ cordova emulate android
 ```
 $ chmod +x /cordovaプロジェクト名/platforms/android/gradlew
 ```
+
+### Docker
+
+準備中
