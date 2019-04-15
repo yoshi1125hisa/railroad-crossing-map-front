@@ -1,4 +1,5 @@
-# 線路マップ
+# 踏切マップ
+
 ## 開発環境
 - Apache Cordova
 
@@ -11,7 +12,37 @@
 
 ## 実行方法
 
+gitからcloneします。
+
+```
+$ git clone https://github.com/yoshi1125hisa/search-railroad-crossing.git
+$ cd search-railroad-crossing
+```
+
+パッケージのインストールをします。
+
+`npm`もしくは`yarn`を使用してください。
+
+```
+$ npm install
+```
+
+```
+$ yarn install
+```
+
+### browser
+
+ブラウザを起動して確認をします。
+
+```
+$ cordova run browser
+```
+
+実行すると、ブラウザが開き確認できます。
+
 ### iOS
+
 iOSのエミュレータを起動して確認をします。
 
 プロジェクトをビルドするためには、XCodeが必要となります。
