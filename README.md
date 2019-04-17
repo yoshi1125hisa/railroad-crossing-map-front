@@ -2,6 +2,10 @@
 
 ## 開発環境
 - Apache Cordova
+- Onsen UI
+- HTML
+- SCSS
+- JavaScript
 
 ## 対応OS
 - Android
