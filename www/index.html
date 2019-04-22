@@ -13,10 +13,10 @@
   <link rel="stylesheet" href="css/style.css">
 
     <script>
-      var map;
-      var marker = [];
-      var infoWindow = [];
-      var markerData = [ // マーカーを立てる場所名・緯度・経度
+      let map;
+      let marker = [];
+      let infoWindow = [];
+      let markerData = [ // マーカーを立てる場所名・緯度・経度
   {
        name: 'TAM 東京',
        lat: 35.6954806,
@@ -47,14 +47,14 @@
  
 function initMap() {
  // 地図の作成
-    var mapLatLng = new google.maps.LatLng({lat: markerData[0]['lat'], lng: markerData[0]['lng']}); // 緯度経度のデータ作成
+    let mapLatLng = new google.maps.LatLng({lat: markerData[0]['lat'], lng: markerData[0]['lng']}); // 緯度経度のデータ作成
    map = new google.maps.Map(document.getElementById('map'), { // #mapに地図を埋め込む
      center: mapLatLng, // 地図の中心を指定
       zoom: 15 // 地図のズームを指定
    });
  
  // マーカー毎の処理
- for (var i = 0; i < markerData.length; i++) {
+ for (let i = 0; i < markerData.length; i++) {
         markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
         marker[i] = new google.maps.Marker({ // マーカーの追加
          position: markerLatLng, // マーカーを立てる位置を指定
@@ -95,3 +95,4 @@ function markerEvent(i) {
 </body>
   <script src="js/main.js"></script>
 </html>
+÷
