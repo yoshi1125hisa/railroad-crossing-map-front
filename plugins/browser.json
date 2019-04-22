@@ -18,6 +18,9 @@
     },
     "monaca-plugin-monaca-core": {
       "PACKAGE_NAME": "com.example.helloworld"
+    },
+    "cordova-plugin-googlemaps": {
+      "PACKAGE_NAME": "com.example.helloworld"
     }
   },
   "dependent_plugins": {}
