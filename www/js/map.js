@@ -6,7 +6,7 @@ let markerData = [ // マーカーを立てる場所名・緯度・経度
  name: 'TAM 東京',
  lat: 35.6954806,
   lng: 139.76325010000005,
-  icon: 'https://3.bp.blogspot.com/-V22bp15AIW8/WsiSGyGTgRI/AAAAAAABLKQ/-5jzlU65ClwDD1yEwY9BnVQZA5nvGjPhwCLcBGAs/s800/train_fumikiri.png'
+  // icon: 'https://3.bp.blogspot.com/-V22bp15AIW8/WsiSGyGTgRI/AAAAAAABLKQ/-5jzlU65ClwDD1yEwY9BnVQZA5nvGjPhwCLcBGAs/s800/train_fumikiri.png'
 }, {
   name: '小川町駅',
 lat: 35.6951212,
@@ -53,11 +53,11 @@ infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
 markerEvent(i); // マーカーにクリックイベントを追加
 }
 
-marker[0].setOptions({// TAM 東京のマーカーのオプション設定
-  icon: {
-   url: markerData[0]['icon']// マーカーの画像を変更
- }
-});
+//  marker[0].setOptions({// TAM 東京のマーカーのオプション設定
+//       icon: {
+//        url: markerData[0]['icon']// マーカーの画像を変更
+//      }
+//  });
 }
 
 // マーカーにクリックイベントを追加

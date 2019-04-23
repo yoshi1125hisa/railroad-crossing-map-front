@@ -1,59 +1,58 @@
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
-    <script src="components/loader.js"></script>
-    <script src="lib/onsenui/js/onsenui.min.js"></script>
-    <link rel="stylesheet" href="components/loader.css">
-    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
-    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
-    <link rel="stylesheet" href="css/style.css">
-    <script src="js/map.js"></script>
-  </head>
-  <body>
-    <ons-page>
-      <div class="toolbar toolbar--material">
-        <div class="toolbar__left toolbar--material__left">
-          <span class="toolbar-button toolbar-button--material">
-            <i class="zmdi zmdi-menu"></i>
-          </span>
-        </div>
-        <div class="toolbar__center toolbar--material__center">
-          踏切マップ
-        </div>
-        <div class="toolbar__right toolbar--material__right">
-          <span class="toolbar-button toolbar-button--material">
-            <i class="zmdi zmdi-search"></i>
-          </span>
-          <span class="toolbar-button toolbar-button--material">
-            <i class="zmdi zmdi-favorite"></i>
-          </span>
-          <span class="toolbar-button toolbar-button--material">
-            <i class="zmdi zmdi-more-vert"></i>
-          </span>
-        </div>
-      </div>
-      <div id="map"></div>
-      <div class="tabbar tabbar--bottom tabbar--material">
-        <label class="tabbar__item tabbar--material__item">
-          <input type="radio" name="tabbar-material-b" checked="checked">
-          <button class="tabbar__button tabbar--material__button">
-            <i class="tabbar__icon tabbar--material__icon zmdi zmdi-phone"></i>
-          </button>
-        </label>
-      
-        <label class="tabbar__item tabbar--material__item">
-          <input type="radio" name="tabbar-material-b">
-          <button class="tabbar__button tabbar--material__button">
-            <i class="tabbar__icon tabbar--material__icon zmdi zmdi-favorite"></i>
-          </button>
-        </label>
-      </div>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/map.js"></script>
+</head>
+
+<body>
+ <ons-page>
+   <div class="toolbar">
+  <div class="toolbar__left">
+    <span class="toolbar-button">
+      <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
+    </span>
+  </div>
+
+  <div class="toolbar__center">
+    踏切マップ
+  </div>
+
+  <div class="toolbar__right">
+        <span class="toolbar-button">
+    <ons-icon icon="fa-cog" style="font-size:25px;"></ons-icon>
+        </span>
+  </div>
+</div>
+    <div id="map"></div>
+ <div class="tabbar">
+  <label class="tabbar__item">
+    <input type="radio" name="tabbar-a" checked="checked">
+    <button class="tabbar__button">
+      <i class="tabbar__icon ion-stop"></i>
+      <div class="tabbar__label">One</div>
+    </button>
+  </label>
+
+  <label class="tabbar__item">
+    <input type="radio" name="tabbar-a">
+    <button class="tabbar__button">
+      <i class="tabbar__icon ion-record"></i>
+      <div class="tabbar__label">Two</div>
+    </button>
+  </label>
+</div>
     </ons-page>
-    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSUkT2q659t1_ktzpetp8AzJo0TgIr23A&callback=initMap" async defer></script>
-    <script src="js/main.js"></script>
-  </body>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSUkT2q659t1_ktzpetp8AzJo0TgIr23A&callback=initMap" async defer></script>
+  <script src="js/main.js"></script>
+</body>
 </html>
