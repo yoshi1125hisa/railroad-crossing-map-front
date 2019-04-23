@@ -38,15 +38,5 @@
     },
     "is_top_level": true,
     "variables": {}
-  },
-  "cordova-plugin-mapbox": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-plugin-mapbox"
-    },
-    "is_top_level": true,
-    "variables": {
-      "ACCESS_TOKEN": "sk.eyJ1IjoieW9zaGkxMTI1aGlzYSIsImEiOiJjanV1ZXl4MGMwZ25lM3pwaXRnNGQwOHltIn0.1c3I3yCO7ugC8_gHhnIfVw"
-    }
   }
 }
