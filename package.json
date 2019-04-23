@@ -22,7 +22,8 @@
     },
     "scripts": {
         "monaca:preview": "npm run dev",
-        "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081"
+        "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081",
+        "browser": "cordova run browser --live-reload"
     },
     "devDependencies": {
         "browser-sync": "^2.26.3",
