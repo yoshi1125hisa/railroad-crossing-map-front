@@ -5,8 +5,14 @@ html,body {
     overscroll-behavior: none;
 }
 
+#top-toolbar {
+  position: fixed;            /* ヘッダーの固定 */
+    top: 0px;                   /* 位置(上0px) */
+    left: 0px;                  /* 位置(右0px) */
+}
+
 /* 地図 */
 #map {
-    height: 95%;
+    height: 100%;
     width: 100%;
 }
