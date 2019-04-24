@@ -1,5 +1,5 @@
 {
-    "name": "monaca-template-onsenui-v2-js-minimum",
+    "name": "踏切マップ",
     "dependencies": {
         "cheerio": "^1.0.0-rc.3",
         "cordova-android": "^8.0.0",
@@ -31,7 +31,8 @@
     "scripts": {
         "monaca:preview": "npm run dev",
         "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081",
-        "browser": "cordova run browser --live-reload"
+        "browser": "cordova run browser --live-reload",
+        "scss": "node-sass --watch --include-path scss www/scss -o www/css --output-style compressed"
     },
     "devDependencies": {
         "browser-sync": "^2.26.4",
