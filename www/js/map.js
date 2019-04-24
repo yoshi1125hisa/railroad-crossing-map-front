@@ -37,6 +37,22 @@ center: mapLatLng, // 地図の中心を指定
 zoom: 15 // 地図のズームを指定
 });
 
+let styleOptions = [{
+  featureType: 'all',
+  elementType: 'labels',
+  stylers: [{ visibility: 'off' }]
+}];
+
+let lopanType = new google.maps.StyledMapType(styleOptions);
+
+map.mapTypes.set('noText', lopanType);
+map.setMapTypeId('noText');
+
+
+
+
+
+
 // マーカー毎の処理
 for (let i = 0; i < markerData.length; i++) {
   markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
