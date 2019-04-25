@@ -14,9 +14,16 @@
         "autoprefixer": "^9.4.10",
         "node-sass": "^4.11.0",
         "node-sass-import": "^2.0.1",
+        "npm-run-all": "^4.1.5",
         "postcss": "^7.0.14",
         "postcss-cli": "^6.1.2"
     },
+    "browserslist": [
+        "last 2 versions",
+        "not ie < 11",
+        "Android >= 6",
+        "iOS >= 10"
+    ],
     "cordova": {
         "plugins": {
             "cordova-custom-config": {},
@@ -31,8 +38,9 @@
     "scripts": {
         "monaca:preview": "npm run dev",
         "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081",
-        "browser": "cordova run browser --live-reload",
-        "scss": "node-sass --watch --include-path scss www/scss -o www/css --output-style compressed"
+        "scss": "node-sass --watch --include-path scss www/scss -o www/css --output-style compressed",
+        "prefix": "postcss --use autoprefixer --no-map www/css -d www/css",
+        "test": "npm-run-all -p dev scss prefix"
     },
     "devDependencies": {
         "browser-sync": "^2.26.4",

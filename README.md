@@ -42,7 +42,7 @@ $ yarn install
 ブラウザを起動して確認をします。
 
 ```
-$ cordova run browser
+$ cordova run dev
 ```
 
 実行すると、ブラウザが開き確認できます。
@@ -125,3 +125,47 @@ $ chmod +x /cordovaプロジェクト名/platforms/android/gradlew
 ### Docker
 
 準備中
+
+## 開発手順
+
+### ローカル
+
+
+
+#### SCSSのコンパイル
+
+```
+$ npm run scss
+```
+
+or 
+
+```
+$ yarn run scss
+```
+
+#### CSSのprefix
+
+```
+$ npm run prefix
+```
+
+or 
+
+```
+$ yarn run prefix
+```
+
+### 実行＋コンパイル
+
+```
+$ npm run test
+```
+
+or 
+
+```
+$ yarn run test
+```
+
+### Docker
