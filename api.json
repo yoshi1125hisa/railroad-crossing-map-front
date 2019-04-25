@@ -1,10 +1,8 @@
 {
-  "number": "",
-  "station_name": "",
-  "between_up": "",
-  "between_down": "",
-  "description": "",
+  "//": "sample json",
+  "name": "",
+  "yomi": "",
   "locate": "",
-  "locate_x": "",
-  "locate_y": ""
+  "lat": "",
+  "lng": ""
 }
