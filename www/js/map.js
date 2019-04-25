@@ -3,30 +3,21 @@ let marker = [];
 let infoWindow = [];
 let markerData = [ // マーカーを立てる場所名・緯度・経度
   {
-  name: 'TAM 東京',
-  lat: 35.6954806,
-  lng: 139.76325010000005
+  name: '東田上',
+  yomi: 'ひがしたがみ',
+  lat: 34.637025,
+  lng: 135.030432
   }, {
-  name: '小川町駅',
-  lat: 35.6951212,
-  lng: 139.76610649999998
+  name: '大谷上甲',
+  yomi: 'おおたにがみこう',
+  lat: 34.642752,
+  lng: 135.024821
   }, {
-  name: '淡路町駅',
-  lat: 35.69496,
-  lng: 139.76746000000003
-  }, {
-  name: '御茶ノ水駅',
-  lat: 35.6993529,
-  lng: 139.76526949999993
-  }, {
-  name: '神保町駅',
-  lat: 35.695932,
-  lng: 139.75762699999996
-  }, {
-  name: '新御茶ノ水駅',
-  lat: 35.696932,
-  lng: 139.76543200000003
-  }
+    name: '離宮道',
+    yomi: 'りきゅうみち',
+    lat: 34.644828,
+    lng: 135.121587
+    }
 ];
 
 function initMap() {
@@ -48,11 +39,6 @@ let lopanType = new google.maps.StyledMapType(styleOptions);
 map.mapTypes.set('noText', lopanType);
 map.setMapTypeId('noText');
 
-
-
-
-
-
 // マーカー毎の処理
 for (let i = 0; i < markerData.length; i++) {
   markerLatLng = new google.maps.LatLng({lat: markerData[i]['lat'], lng: markerData[i]['lng']}); // 緯度経度のデータ作成
@@ -65,7 +51,7 @@ for (let i = 0; i < markerData.length; i++) {
  });
 
 infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-   content: '<div class="map">' + markerData[i]['name'] + '</div>' // 吹き出しに表示する内容
+   content: '<div class="map">' + '<h1>' + markerData[i]['name'] + '</h1>' + markerData[i]['yomi'] +'</div>' // 吹き出しに表示する内容
  });
 
 markerEvent(i); // マーカーにクリックイベントを追加

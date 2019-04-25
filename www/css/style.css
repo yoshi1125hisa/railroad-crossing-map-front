@@ -1,18 +1,1 @@
-/**/
-
-/* バウンススクロールの禁止 */
-html,body {
-    overscroll-behavior: none;
-}
-
-#top-toolbar {
-  position: fixed;            /* ヘッダーの固定 */
-    top: 0px;                   /* 位置(上0px) */
-    left: 0px;                  /* 位置(右0px) */
-}
-
-/* 地図 */
-#map {
-    height: 100%;
-    width: 100%;
-}
+html,body{overscroll-behavior:none}#top-toolbar{position:fixed;top:0px;left:0px}#map{height:100%;width:100%}h1,p{margin:0;padding:0}

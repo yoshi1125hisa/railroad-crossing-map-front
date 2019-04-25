@@ -1,5 +1,5 @@
 {
-    "name": "踏切マップ",
+    "name": "railroad-crossing-map",
     "dependencies": {
         "cheerio": "^1.0.0-rc.3",
         "cordova-android": "^8.0.0",
