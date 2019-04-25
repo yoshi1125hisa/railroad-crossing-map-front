@@ -33,6 +33,8 @@ $ cd search-railroad-crossing
 $ npm install
 ```
 
+or
+
 ```
 $ yarn install
 ```
@@ -156,7 +158,7 @@ or
 $ yarn run prefix
 ```
 
-### 実行＋コンパイル
+#### 実行＋コンパイル
 
 ```
 $ npm run test
