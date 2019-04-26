@@ -15,44 +15,49 @@
 </head>
 
 <body>
- <ons-page>
-   <div class="toolbar" id="top-toolbar">
-  <div class="toolbar__left">
-    <span class="toolbar-button">
-      <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
-    </span>
-  </div>
-
-  <div class="toolbar__center">
-    踏切マップ
-  </div>
-
-  <div class="toolbar__right">
-        <span class="toolbar-button">
-    <ons-icon icon="fa-cog" style="font-size:25px;"></ons-icon>
-        </span>
-  </div>
-</div>
-    <div id="map"></div>
-
- <div class="tabbar" position="bottom">
-  <label class="tabbar__item">
-    <input type="radio" name="tabbar-a" checked="checked">
-    <button class="tabbar__button">
-      <i class="tabbar__icon ion-map"></i>
-      <div class="tabbar__label">マップ</div>
-    </button>
-  </label>
-
-  <label class="tabbar__item">
-    <input type="radio" name="tabbar-a">
-    <button class="tabbar__button">
-      <i class="tabbar__icon ion-ios-list-outline"></i>
-      <div class="tabbar__label">一覧</div>
-    </button>
-  </label>
-</div>
-    </ons-page>
+    <ons-page>
+        <ons-toolbar>
+            <div class="toolbar" id="top-toolbar">
+                <div class="toolbar__left">
+                  <span class="toolbar-button">
+                    <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
+                  </span>
+                </div>
+              
+                <div class="toolbar__center">
+                  踏切マップ
+                </div>
+              
+                <div class="toolbar__right">
+                      <span class="toolbar-button">
+                  <ons-icon icon="fa-cog" style="font-size:25px;"></ons-icon>
+                      </span>
+                </div>
+              </div>
+          </ons-toolbar>
+        
+      
+        <ons-tabbar position="auto"> <!--swapble-->
+          <ons-tab page="maps.html" label="マップ" icon="ion-map" active>
+          </ons-tab>
+          <ons-tab page="list.html" label="リスト" icon="ion-ios-list-outline">
+          </ons-tab>
+        </ons-tabbar>
+      </ons-page>
+      
+      <template id="maps.html">
+        <ons-page id="Maps">
+            <div id="map"></div>
+        </ons-page>
+      </template>
+      
+      <template id="list.html">
+        <ons-page id="List">
+          <p style="text-align: center;">
+            This is the second page.
+          </p>
+        </ons-page>
+      </template>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSUkT2q659t1_ktzpetp8AzJo0TgIr23A&callback=initMap" async defer></script>
   <script src="js/main.js"></script>
 </body>
