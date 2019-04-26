@@ -126,7 +126,17 @@ $ chmod +x /cordovaプロジェクト名/platforms/android/gradlew
 
 ### Docker
 
-準備中
+#### ビルド
+
+```
+$ docker build -t railroad-crossing-map .
+```
+
+#### 実行
+
+```
+$ docker run -it railroad-crossing-map
+```
 
 ## 開発手順
 
