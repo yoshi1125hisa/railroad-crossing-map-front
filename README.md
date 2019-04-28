@@ -159,6 +159,12 @@ $ yarn run scss
 #### CSSのprefix
 
 ```
+$ npx gulp
+```
+
+以下は動作確認ができていないため推奨しません。
+
+```
 $ npm run prefix
 ```
 
