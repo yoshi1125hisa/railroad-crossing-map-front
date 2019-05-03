@@ -5,12 +5,13 @@ ons.ready(function() {
 window.fn = {};
 window.fn.open = function() {
   console.log("menu is open!");
-  var menu = document.getElementById('menu');
+  let menu = document.getElementById('menu');
   menu.open();
+  console.log("menu is opend!")
 };
 window.fn.load = function(page) {
-  var content = document.getElementById('content');
-  var menu = document.getElementById('menu');
+  let content = document.getElementById('content');
+  let menu = document.getElementById('menu');
   content
     .load(page)
     .then(menu.close.bind(menu));
