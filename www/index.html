@@ -18,22 +18,6 @@
 <body>
     <ons-page>
 
-        <ons-splitter>
-            <ons-splitter-side id="menu" side="left" width="100%" collapse swipeable>
-              <ons-page>
-                <ons-list>
-                  <ons-list-item onclick="fn.load('maps.html')" tappable>
-                    maps
-                  </ons-list-item>
-                  <ons-list-item onclick="fn.load('list.html')" tappable>
-                    list
-                  </ons-list-item>
-                </ons-list>
-              </ons-page>
-            </ons-splitter-side>
-            <ons-splitter-content id="content" page="maps.html"></ons-splitter-content>
-          </ons-splitter>
-
         <ons-toolbar>
             <div class="toolbar" id="top-toolbar">
                 <div class="toolbar__left">
@@ -46,10 +30,10 @@
                   踏切マップ
                 </div>
               
-                <div class="toolbar__right" onclick="fn.open()">
-                      <span class="toolbar-button">
+                <div class="toolbar__right">
+                      <!-- <span class="toolbar-button">
                   <ons-icon icon="fa-cog" style="font-size:25px;"></ons-icon>
-                      </span>
+                      </span> -->
                 </div>
               </div>
           </ons-toolbar>
