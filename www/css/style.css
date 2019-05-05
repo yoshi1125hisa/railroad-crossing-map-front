@@ -1,1 +1,1 @@
-html,body{-ms-scroll-chaining:none;overscroll-behavior:none}#top-toolbar{position:fixed;top:0px;left:0px}#map{height:100%;width:100%}h1,p{margin:0;padding:0}.map{text-align:center}
+html,body{overscroll-behavior:none}#top-toolbar{position:fixed;top:0px;left:0px}#map{height:100%;width:100%}h1,p{margin:0;padding:0}.map{text-align:center}.gm-svpc{display:none}
