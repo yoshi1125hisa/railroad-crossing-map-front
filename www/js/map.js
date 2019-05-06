@@ -1,4 +1,4 @@
-// var json = require('./test.json');
+// let json = require('../json.json');
 // console.log(json);
 // ローカルのJSONを読み込み
 
