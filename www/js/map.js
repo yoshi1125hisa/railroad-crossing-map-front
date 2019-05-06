@@ -1,3 +1,7 @@
+// var json = require('./test.json');
+// console.log(json);
+// ローカルのJSONを読み込み
+
 let map;
 let marker = [];
 let infoWindow = [];
