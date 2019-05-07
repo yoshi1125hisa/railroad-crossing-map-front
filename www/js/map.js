@@ -60,7 +60,10 @@ for (let i = 0; i < markerData.length; i++) {
  });
 
 infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-   content: '<div class="map">' + '<h1>' + markerData[i]['name'] + '</h1>' + markerData[i]['yomi'] +'</div>' // 吹き出しに表示する内容
+   content: '<div class="map">' +
+            '<h1 style="margin: 0;padding: 0;">' + markerData[i]['name'] + '</h1>' + markerData[i]['yomi'] +
+            '<br><ons-button modifier="quiet" onclick="myNavigator.pushPage("datail.html", { animation : "slide" } )">詳細をみる</ons-button>' +
+            '</div>' // 吹き出しに表示する内容
  });
 
 markerEvent(i); // マーカーにクリックイベントを追加

@@ -16,6 +16,7 @@
 </head>
 
 <body>
+    <ons-navigator title="Navigator" var="myNavigator">
     <ons-page>
 
         <ons-toolbar>
@@ -46,6 +47,7 @@
           </ons-tab>
         </ons-tabbar>
       </ons-page>
+      </ons-navigator>
       
       <ons-template id="maps.html">
         <ons-page id="Maps">
@@ -59,6 +61,48 @@
             <ons-lazy-repeat id="infinite-list"></ons-lazy-repeat>
           </ons-list>
         </ons-page>
+      </ons-template>
+
+      <ons-template id="datail.html">
+          <ons-page id="Datail">
+              <ons-toolbar>
+                  <div class="toolbar" id="top-toolbar">
+                    <div class="toolbar__left">
+                      <ons-back-button>Back</ons-back-button>
+                    </div>
+                    
+                      <div class="toolbar__center">
+                        {{ 踏切の名前 }}
+                      </div>
+                    
+                      <div class="toolbar__right">
+                            <!-- <span class="toolbar-button">
+                        <ons-icon icon="fa-cog" style="font-size:25px;"></ons-icon>
+                            </span> -->
+                      </div>
+                    </div>
+                </ons-toolbar>
+      
+                <ons-card>
+                  <img src="http://dt6110.web.fc2.com/fumikiri/JR/JR_san/ag01.jpg" alt="Onsen UI" style="width: 100%">
+                  <small>ちゃのき</small>
+                    <h1 style="margin: 0;padding: 0;">茶ノ木</h1>
+                  <p>
+                    兵庫県姫路市網干区高田字茶の木362-1
+                  </p>
+      
+                  <!-- <div class="content">
+                    <div>
+                      <ons-button><ons-icon icon="ion-thumbsup"></ons-icon></ons-button>
+                      <ons-button><ons-icon icon="ion-share"></ons-icon></ons-button>
+                    </div> 
+                    <ons-list>
+                      <ons-list-header>タイトル</ons-list-header>
+                      <ons-list-item>項目1</ons-list-item>
+                    </ons-list>
+                  </div> -->
+                </ons-card>
+            </ons-page>
       </ons-template>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSUkT2q659t1_ktzpetp8AzJo0TgIr23A&callback=initMap" async defer></script>
 </body>
