@@ -1,2 +1,2 @@
-let json = require('../list.json');
-console.log(json);
+// let json = require('../list.json');
+// console.log(json);
