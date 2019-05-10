@@ -82,30 +82,9 @@ function markerEvent(i) {
 */
 
 
-function initMap() {
+let infoWindow = [];
 
-    // 地図の作成
-    let mapInfo = new google.maps.LatLng({lat: locations[0]['lat'], lng: locations[0]['lng']}); // 緯度経度のデータ作成
-    map = new google.maps.Map(document.getElementById('map'), { // #mapに地図を埋め込む
-    center: mapInfo, // 地図の中心を指定
-    zoom: 15 // 地図のズームを指定
-    });
-
-  let markers = locations.map(function(location, i) {
-    return new google.maps.Marker({
-      position: location,
-      // label: locations[i].name,
-      icon: {
-        url: 'img/humikiri.png'
-      }
-    });
-  });
-
-  // Add a marker clusterer to manage the markers.
-  var markerCluster = new MarkerClusterer(map, markers,
-      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-}
-var locations = [
+let locations = [
   // マーカーを立てる場所名・緯度・経度
   {
   name: '東田上',
@@ -130,14 +109,49 @@ var locations = [
   }
 ];
 
-infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-  content: mapContent // 吹き出しに表示する内容
-});
+let mapInfo;
 
-markerEvent(i); // マーカーにクリックイベントを追加
+function initMap() {
 
+    // 地図の作成
+    mapInfo = new google.maps.LatLng(
+      {
+        lat: locations[0]['lat'],
+        lng: locations[0]['lng']
+      }
+      ); // 緯度経度のデータ作成
+    map = new google.maps.Map(document.getElementById('map'), { // #mapに地図を埋め込む
+    center: mapInfo, // 地図の中心を指定
+    zoom: 15 // 地図のズームを指定
+    });
+
+  let markers = locations.map(function(location, i) {
+    return new google.maps.Marker({
+      position: location,
+      // label: locations[i].name,
+      icon: {
+        url: 'img/humikiri.png'
+      }
+    });
+
+  });
+
+  let markerCluster = new MarkerClusterer(map, markers,
+      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+}
+
+for (let i = 0; i < locations.length; i++) {
+  mapContent = 
+    `<div class="map"><h1 style="margin: 0;padding: 0;">${locations[i]['name']}</h1>
+    ${locations[i]['yomi']}<br>
+    <ons-button modifier="quiet" id="datail">詳細をみる</ons-button></div>`;
+  infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+    content: mapContent // 吹き出しに表示する内容
+ });
+ markerEvent(i); // マーカーにクリックイベントを追加
 function markerEvent(i) {
   marker[i].addListener('click', function() { // マーカーをクリックしたとき
     infoWindow[i].open(map, marker[i]); // 吹き出しの表示
   });
+}
 }
