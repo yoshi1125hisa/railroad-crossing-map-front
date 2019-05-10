@@ -1,4 +1,5 @@
-/* let map;
+/* 
+let map;
 let marker = [];
 let infoWindow = [];
 let locations = [
@@ -61,8 +62,7 @@ infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
    content: mapContent // 吹き出しに表示する内容
  });
 
-markerEvent(i); // マーカーにクリックイベントを追加
-
+  markerEvent(i); // マーカーにクリックイベントを追加
 }
 
 // marker[].setOptions({
@@ -111,6 +111,23 @@ let locations = [
 
 let mapInfo;
 
+
+for (let i = 0; i < locations.length; i++) {
+  mapContent = 
+    `<div class="map"><h1 style="margin: 0;padding: 0;">${locations[i]['name']}</h1>
+    ${locations[i]['yomi']}<br>
+    <ons-button modifier="quiet" id="datail">詳細をみる</ons-button></div>`;
+  infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+    content: mapContent // 吹き出しに表示する内容
+ });
+ markerEvent(i); // マーカーにクリックイベントを追加
+function markerEvent(i) {
+  markers[i].addListener('click', function() { // マーカーをクリックしたとき
+    infoWindow[i].open(map, markers[i]); // 吹き出しの表示
+  });
+}
+}
+
 function initMap() {
 
     // 地図の作成
@@ -138,20 +155,4 @@ function initMap() {
 
   let markerCluster = new MarkerClusterer(map, markers,
       {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
-}
-
-for (let i = 0; i < locations.length; i++) {
-  mapContent = 
-    `<div class="map"><h1 style="margin: 0;padding: 0;">${locations[i]['name']}</h1>
-    ${locations[i]['yomi']}<br>
-    <ons-button modifier="quiet" id="datail">詳細をみる</ons-button></div>`;
-  infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-    content: mapContent // 吹き出しに表示する内容
- });
- markerEvent(i); // マーカーにクリックイベントを追加
-function markerEvent(i) {
-  marker[i].addListener('click', function() { // マーカーをクリックしたとき
-    infoWindow[i].open(map, marker[i]); // 吹き出しの表示
-  });
-}
 }
