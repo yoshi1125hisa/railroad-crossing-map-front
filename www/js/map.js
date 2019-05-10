@@ -1,8 +1,4 @@
-/* let json = require('../json.json');
-console.log(json);
-ローカルのJSONを読み込み */
-
-let map;
+/* let map;
 let marker = [];
 let infoWindow = [];
 let locations = [
@@ -78,6 +74,68 @@ markerEvent(i); // マーカーにクリックイベントを追加
 }
 
 // マーカーにクリックイベントを追加
+function markerEvent(i) {
+  marker[i].addListener('click', function() { // マーカーをクリックしたとき
+    infoWindow[i].open(map, marker[i]); // 吹き出しの表示
+  });
+}
+*/
+
+
+function initMap() {
+
+    // 地図の作成
+    let mapInfo = new google.maps.LatLng({lat: locations[0]['lat'], lng: locations[0]['lng']}); // 緯度経度のデータ作成
+    map = new google.maps.Map(document.getElementById('map'), { // #mapに地図を埋め込む
+    center: mapInfo, // 地図の中心を指定
+    zoom: 15 // 地図のズームを指定
+    });
+
+  let markers = locations.map(function(location, i) {
+    return new google.maps.Marker({
+      position: location,
+      // label: locations[i].name,
+      icon: {
+        url: 'img/humikiri.png'
+      }
+    });
+  });
+
+  // Add a marker clusterer to manage the markers.
+  var markerCluster = new MarkerClusterer(map, markers,
+      {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+}
+var locations = [
+  // マーカーを立てる場所名・緯度・経度
+  {
+  name: '東田上',
+  yomi: 'ひがしたがみ',
+  lat: 34.637025,
+  lng: 135.030432
+  }, {
+  name: '大谷上甲',
+  yomi: 'おおたにがみこう',
+  lat: 34.642752,
+  lng: 135.024821
+  }, {
+  name: '離宮道',
+  yomi: 'りきゅうみち',
+  lat: 34.644828,
+  lng: 135.121587
+  }, {
+  name: '茶ノ木',
+  yomi: 'ちゃのき',
+  lat: 34.8148524,
+  lng: 134.5820931
+  }
+];
+
+infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
+  content: mapContent // 吹き出しに表示する内容
+});
+
+markerEvent(i); // マーカーにクリックイベントを追加
+
 function markerEvent(i) {
   marker[i].addListener('click', function() { // マーカーをクリックしたとき
     infoWindow[i].open(map, marker[i]); // 吹き出しの表示
