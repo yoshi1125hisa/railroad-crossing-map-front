@@ -19,8 +19,8 @@
 gitからcloneします。
 
 ```
-$ git clone https://github.com/yoshi1125hisa/search-railroad-crossing.git
-$ cd search-railroad-crossing
+$ git clone <THIS_REPOSITORY_URL>
+$ cd <THIS_REPOSITORY_NAME>
 ```
 
 ### ローカル
