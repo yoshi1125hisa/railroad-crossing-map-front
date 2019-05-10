@@ -10,13 +10,7 @@
     "cordova-custom-config": {
       "PACKAGE_NAME": "com.example.helloworld"
     },
-    "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "com.example.helloworld"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.example.helloworld"
-    },
-    "monaca-plugin-monaca-core": {
+    "cordova-plugin-browsersync": {
       "PACKAGE_NAME": "com.example.helloworld"
     }
   },
