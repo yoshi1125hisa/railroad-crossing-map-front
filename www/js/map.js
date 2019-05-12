@@ -43,7 +43,7 @@ function initMap() {
       position: location,
       // label: locations[i].name,
       icon: {
-        url: 'img/humikiri.png'
+        url: 'img/icon/humikiri.png'
       }
     });
 
