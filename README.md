@@ -121,7 +121,7 @@ $ cordova emulate android
 権限の関係でエラーとなるため、以下のコマンドを実施してから再度、ビルド→エミュレートします。
 
 ```
-$ chmod +x /cordovaプロジェクト名/platforms/android/gradlew
+$ chmod +x /<THIS_REPOSITORY_NAME>/platforms/android/gradlew
 ```
 
 ### Docker
@@ -129,13 +129,15 @@ $ chmod +x /cordovaプロジェクト名/platforms/android/gradlew
 #### ビルド
 
 ```
-$ docker build -t railroad-crossing-map .
+$ docker build -t <THIS_APP_NAME> .
 ```
+
+`.` はカレントディレクトリを示すものです。削除しないでください。
 
 #### 実行
 
 ```
-$ docker run -it railroad-crossing-map
+$ docker run -it <THIS_APP_NAME>
 ```
 
 ## 開発手順
