@@ -1,1 +1,1 @@
-html,body{overscroll-behavior:none}#top-toolbar{position:fixed;top:0px;left:0px}#map{height:100%;width:100%}h1,p{margin:0;padding:0}.map{text-align:center}
+html,body{overscroll-behavior:none}#top-toolbar{position:fixed;top:0px;left:0px}#map{height:100%;width:100%}h1,p{margin:0;padding:0}.map{text-align:center}[data-ruby]{position:relative}[data-ruby]::before{content:attr(data-ruby);position:absolute;top:-1em;left:0;right:0;margin:auto;font-size:0.5em}
