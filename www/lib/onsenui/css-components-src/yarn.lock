@@ -297,7 +297,7 @@ babel-code-frame@^6.26.0:
     esutils "^2.0.2"
     js-tokens "^3.0.2"
 
-babel-core@^6.24.1, babel-core@^6.25.0:
+babel-core@6.25.0, babel-core@^6.24.1:
   version "6.25.0"
   resolved "https://registry.yarnpkg.com/babel-core/-/babel-core-6.25.0.tgz#7dd42b0463c742e9d5296deb3ec67a9322dad729"
   dependencies:
@@ -679,7 +679,7 @@ babel-plugin-transform-strict-mode@^6.24.1:
     babel-runtime "^6.22.0"
     babel-types "^6.24.1"
 
-babel-preset-env@^1.6.1:
+babel-preset-env@1.6.1:
   version "1.6.1"
   resolved "https://registry.yarnpkg.com/babel-preset-env/-/babel-preset-env-1.6.1.tgz#a18b564cc9b9afdf4aae57ae3c1b0d99188e6f48"
   dependencies:
@@ -714,7 +714,7 @@ babel-preset-env@^1.6.1:
     invariant "^2.2.2"
     semver "^5.3.0"
 
-babel-preset-stage-3@^6.24.1:
+babel-preset-stage-3@6.24.1:
   version "6.24.1"
   resolved "https://registry.yarnpkg.com/babel-preset-stage-3/-/babel-preset-stage-3-6.24.1.tgz#836ada0a9e7a7fa37cb138fb9326f87934a48395"
   dependencies:
@@ -1279,7 +1279,7 @@ concat-map@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
 
-connect-history-api-fallback@^1.1.0, connect-history-api-fallback@^1.3.0:
+connect-history-api-fallback@1.3.0, connect-history-api-fallback@^1.1.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/connect-history-api-fallback/-/connect-history-api-fallback-1.3.0.tgz#e51d17f8f0ef0db90a64fdb47de3051556e9f169"
 
@@ -1668,7 +1668,7 @@ etag@^1.7.0, etag@~1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/etag/-/etag-1.7.0.tgz#03d30b5f67dd6e632d2945d30d6652731a34d5d8"
 
-event-stream@^3.1.2:
+event-stream@3.3.4:
   version "3.3.4"
   resolved "https://registry.yarnpkg.com/event-stream/-/event-stream-3.3.4.tgz#4ab4c9a0f5a54db9338b4c34d86bfce8f4b35571"
   dependencies:
@@ -2046,17 +2046,7 @@ glob@7.0.x:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^5.0.14:
-  version "5.0.15"
-  resolved "https://registry.yarnpkg.com/glob/-/glob-5.0.15.tgz#1bc936b9e02f4a603fcc222ecf7633d30b8b93b1"
-  dependencies:
-    inflight "^1.0.4"
-    inherits "2"
-    minimatch "2 || 3"
-    once "^1.3.0"
-    path-is-absolute "^1.0.0"
-
-glob@^7.0.3, glob@^7.0.5, glob@^7.1.2:
+glob@7.1.2, glob@^7.0.3, glob@^7.0.5:
   version "7.1.2"
   resolved "https://registry.yarnpkg.com/glob/-/glob-7.1.2.tgz#c19c9df9a028702d678612384a6552404c636d15"
   dependencies:
@@ -2064,6 +2054,16 @@ glob@^7.0.3, glob@^7.0.5, glob@^7.1.2:
     inflight "^1.0.4"
     inherits "2"
     minimatch "^3.0.4"
+    once "^1.3.0"
+    path-is-absolute "^1.0.0"
+
+glob@^5.0.14:
+  version "5.0.15"
+  resolved "https://registry.yarnpkg.com/glob/-/glob-5.0.15.tgz#1bc936b9e02f4a603fcc222ecf7633d30b8b93b1"
+  dependencies:
+    inflight "^1.0.4"
+    inherits "2"
+    minimatch "2 || 3"
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
@@ -2164,14 +2164,14 @@ gulp-cssmin:
     map-stream "0.0.4"
     temp-write "~0.1.0"
 
-gulp-file@^0.3.0:
+gulp-file@0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/gulp-file/-/gulp-file-0.3.0.tgz#e8c4d763f126fb3332fc416e3d1ef46ed67d8d0d"
   dependencies:
     gulp-util "^2.2.14"
     through2 "^0.4.1"
 
-gulp-less@^1.2.3:
+gulp-less@1.3.9:
   version "1.3.9"
   resolved "https://registry.yarnpkg.com/gulp-less/-/gulp-less-1.3.9.tgz#e129750f236693ead5b522af311cc33eeff1910e"
   dependencies:
@@ -2182,28 +2182,28 @@ gulp-less@^1.2.3:
     through2 "^0.5.1"
     vinyl-sourcemaps-apply "^0.1.1"
 
-gulp-load-plugins@^0.5.0:
+gulp-load-plugins@0.5.3:
   version "0.5.3"
   resolved "https://registry.yarnpkg.com/gulp-load-plugins/-/gulp-load-plugins-0.5.3.tgz#2f2f7ce35d0b6bf1b2d55921d0de76c9d918d35c"
   dependencies:
     findup-sync "^0.1.2"
     multimatch "^0.3.0"
 
-gulp-order@^1.0.6:
+gulp-order@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/gulp-order/-/gulp-order-1.1.1.tgz#0b8ef0833235bed65f1efbc79c6aed97b1db41e9"
   dependencies:
     minimatch "~0.2.14"
     through "~2.3.4"
 
-gulp-plumber@^0.6.1:
+gulp-plumber@0.6.6:
   version "0.6.6"
   resolved "https://registry.yarnpkg.com/gulp-plumber/-/gulp-plumber-0.6.6.tgz#9f9846a513c70d03216ce7a2a8ce6fd5a3fc3175"
   dependencies:
     gulp-util "~3"
     through2 "~0.6"
 
-gulp-postcss@^7.0.0:
+gulp-postcss@7.0.0:
   version "7.0.0"
   resolved "https://registry.yarnpkg.com/gulp-postcss/-/gulp-postcss-7.0.0.tgz#cfb62a19fa947f8be67ce9ecae89ceb959f0cf93"
   dependencies:
@@ -2222,7 +2222,7 @@ gulp-rename@~1.1.0:
   dependencies:
     map-stream ">=0.0.4"
 
-gulp-shell@^0.2.4:
+gulp-shell@0.2.11:
   version "0.2.11"
   resolved "https://registry.yarnpkg.com/gulp-shell/-/gulp-shell-0.2.11.tgz#19ba680b65a866f6042ede0b0e34b62db71f2139"
   dependencies:
@@ -2243,7 +2243,7 @@ gulp-stylelint:
     stylelint "^7.9.0"
     through2 "^2.0.3"
 
-gulp-stylus@^1.0.0:
+gulp-stylus@1.3.7:
   version "1.3.7"
   resolved "https://registry.yarnpkg.com/gulp-stylus/-/gulp-stylus-1.3.7.tgz#b44526f1733c496f7d34bf6314ed153cdb4419ef"
   dependencies:
@@ -2254,7 +2254,7 @@ gulp-stylus@^1.0.0:
     stylus "*"
     through2 "^0.6.3"
 
-gulp-util@^2.2.14, gulp-util@~2.2.0:
+gulp-util@2.2.20, gulp-util@^2.2.14, gulp-util@~2.2.0:
   version "2.2.20"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-2.2.20.tgz#d7146e5728910bd8f047a6b0b1e549bc22dbd64c"
   dependencies:
@@ -2290,7 +2290,7 @@ gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.8, gulp-util@~3, gulp-util@~3
     through2 "^2.0.0"
     vinyl "^0.5.0"
 
-gulp@^3.9.1:
+gulp@3.9.1:
   version "3.9.1"
   resolved "https://registry.yarnpkg.com/gulp/-/gulp-3.9.1.tgz#571ce45928dd40af6514fc4011866016c13845b4"
   dependencies:
@@ -2703,7 +2703,7 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
-js-yaml@^3.10.0:
+js-yaml@3.10.0:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.10.0.tgz#2e78441646bd4682e963f22b6e92823c309c62dc"
   dependencies:
@@ -3722,7 +3722,7 @@ postcss-color-rgba-fallback@^3.0.0:
     postcss-value-parser "^3.3.0"
     rgb-hex "^2.1.0"
 
-postcss-cssnext@^3.0.2:
+postcss-cssnext@3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/postcss-cssnext/-/postcss-cssnext-3.0.2.tgz#63b77adb0b8a4c1d5ec32cd345539535a3417d48"
   dependencies:
@@ -3799,7 +3799,7 @@ postcss-image-set-polyfill@^0.3.5:
     postcss "^6.0.1"
     postcss-media-query-parser "^0.2.3"
 
-postcss-import@^9.1.0:
+postcss-import@9.1.0:
   version "9.1.0"
   resolved "https://registry.yarnpkg.com/postcss-import/-/postcss-import-9.1.0.tgz#95fe9876a1e79af49fbdc3589f01fe5aa7cc1e80"
   dependencies:
@@ -4334,7 +4334,7 @@ right-align@^0.1.1:
   dependencies:
     align-text "^0.1.1"
 
-rimraf@2, rimraf@^2.6.1:
+rimraf@2, rimraf@2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.1.tgz#c2338ec643df7a1b7fe5c54fa86f57428a55f33d"
   dependencies:
@@ -4346,13 +4346,13 @@ rimraf@~2.5.1, rimraf@~2.5.4:
   dependencies:
     glob "^7.0.5"
 
-rollup-plugin-babel@^3.0.2:
+rollup-plugin-babel@3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/rollup-plugin-babel/-/rollup-plugin-babel-3.0.2.tgz#a2765dea0eaa8aece351c983573300d17497495b"
   dependencies:
     rollup-pluginutils "^1.5.0"
 
-rollup-plugin-commonjs@^8.2.6:
+rollup-plugin-commonjs@8.2.6:
   version "8.2.6"
   resolved "https://registry.yarnpkg.com/rollup-plugin-commonjs/-/rollup-plugin-commonjs-8.2.6.tgz#27e5b9069ff94005bb01e01bb46a1e4873784677"
   dependencies:
@@ -4376,11 +4376,11 @@ rollup-pluginutils@^2.0.1:
     estree-walker "^0.3.0"
     micromatch "^2.3.11"
 
-rollup@^0.51.5:
+rollup@0.51.5:
   version "0.51.5"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.51.5.tgz#5caf9101fcaefe344065701ece7de697631a8035"
 
-run-sequence@^0.3.6:
+run-sequence@0.3.7:
   version "0.3.7"
   resolved "https://registry.yarnpkg.com/run-sequence/-/run-sequence-0.3.7.tgz#a5d7a09d1b38bec8e8c55dc94082d3ae6016a623"
   dependencies:
