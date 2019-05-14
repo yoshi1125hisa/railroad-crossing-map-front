@@ -369,6 +369,17 @@ function initMap() {
     zoom: 15 // 地図のズームを指定
   });
 
+  let styleOptions = [{
+    featureType: 'all',
+    elementType: 'labels',
+    stylers: [{
+      visibility: 'off'
+    }]
+  }];
+  let mapType = new google.maps.StyledMapType(styleOptions);
+  map.mapTypes.set('noText', mapType);
+  map.setMapTypeId('noText');
+
   let markers = locations.map(function (locations, i) {
     return new google.maps.Marker({
       position: locations,
@@ -393,10 +404,9 @@ function initMap() {
       markers[i].addListener('click', function () { // マーカーをクリックしたとき
         infoWindow[i].open(map, markers[i]); // 吹き出しの表示
       });
-    }
-  }
+    };
+  };
 
   let markerCluster = new MarkerClusterer(map, markers, {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
   });
-}
