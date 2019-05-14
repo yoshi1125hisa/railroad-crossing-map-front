@@ -1,4 +1,4 @@
-FROM node:11.0.0-alpine
+FROM node:11.15.0-alpine
 
 ARG project_dir=/app/
 
