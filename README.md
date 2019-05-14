@@ -2,6 +2,14 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/65141ac4-fec2-4e56-8a75-a33ae31f6ad3/deploy-status)](https://app.netlify.com/sites/rc-map/deploys)
 
+## イメージ
+
+### PC
+<img src="./img/ss_pc.png" width="60%">
+
+### SP (iPhoneX)
+<img src="./img/ss_iphonex.png" width="30%">
+
 ## 開発環境
 - Apache Cordova
 - Onsen UI

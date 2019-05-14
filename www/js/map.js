@@ -404,9 +404,10 @@ function initMap() {
       markers[i].addListener('click', function () { // マーカーをクリックしたとき
         infoWindow[i].open(map, markers[i]); // 吹き出しの表示
       });
-    };
-  };
+    }
+  }
 
   let markerCluster = new MarkerClusterer(map, markers, {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
   });
+}
