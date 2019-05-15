@@ -51,7 +51,7 @@
   "deprecated": false,
   "description": "Cordova/Phonegap plugin to update platform configuration files based on preferences and config-file data defined in config.xml.",
   "devDependencies": {
-    "got": "6.7.1",
+    "got": "9.6.0",
     "jshint": "2.10.2"
   },
   "homepage": "https://github.com/dpa99c/cordova-custom-config#readme",
