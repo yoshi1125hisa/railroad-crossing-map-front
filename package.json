@@ -36,7 +36,10 @@
         ]
     },
     "scripts": {
-        "start": "npm run dev",
+        "cordova": "cordova",
+        "webpack": "webpack",
+        "start": "webpack & cordova build & cordova run browser",
+        "android": "webpack & cordova build & cordova run android",
         "monaca:preview": "npm run dev",
         "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081",
         "scss": "node-sass --watch --include-path scss www/scss -o www/css --output-style compressed",
