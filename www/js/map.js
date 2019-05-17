@@ -1,9 +1,10 @@
-let infoWindow = [];
+let infoWindow = []
 
 // マーカーを立てる場所名・緯度・経度
+
 let locations = [
   { "rc_kana": "ひおかだいに",  "rc_name": "日岡第二",  "rc_address": "兵庫県加古川市加古川町中津字樋掛388-2",  "lng": "134.850095",  "lat": "34.770854"}, 
-  { "rc_rc_kana": "ひおかだいさん",  "rc_name": "日岡第三",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
+  { "rc_kana": "ひおかだいさん",  "rc_name": "日岡第三",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "ひおかだいよん",  "rc_name": "日岡第四",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "ひおか",  "rc_name": "日岡",  "rc_address": "兵庫県加古川市加古川町大野字イトミ203-4",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "おおのにし",  "rc_name": "大野西",  "rc_address": "兵庫県加古川市加古川町大野字早瀬1155-3",  "lng": "0",  "lat": "0"}, 
@@ -173,9 +174,9 @@ let locations = [
   { "rc_kana": "にししょうひがし",  "rc_name": "西庄東",  "rc_address": "兵庫県姫路市西庄字九堀121-3",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "にししょうにし",  "rc_name": "西庄西",  "rc_address": "兵庫県姫路市西庄字九堀121-3",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "はっちょう",  "rc_name": "八町",  "rc_address": "兵庫県姫路市西庄字九堀154-3",  "lng": "0",  "lat": "0"}, 
-  { "rc_kana": "まえかわいち",  "rc_name": "前川一",  "rc_address": "兵庫県姫路市土山四丁目630-2",  "lng": "134.669186",  "lat": "34.832388"}, 
+  { "rc_kana": "まえかわいち",  "rc_name": "前川一",  "rc_address": "兵庫県姫路市土山四丁目630-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "まえかわ",  "rc_name": "前川",  "rc_address": "兵庫県姫路市土山四丁目648-3",  "lng": "0",  "lat": "0"}, 
-  { "rc_kana": "みやのまえ",  "rc_name": "宮の前（1）",  "rc_address": "兵庫県姫路市土山四丁目545-2",  "lng": "134.669186",  "lat": "34.832388"}, 
+  { "rc_kana": "みやのまえ",  "rc_name": "宮の前（1）",  "rc_address": "兵庫県姫路市土山四丁目545-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "みやのにし",  "rc_name": "宮の西",  "rc_address": "兵庫県姫路市土山六丁目744-2",  "lng": "134.665659",  "lat": "34.833083"}, 
   { "rc_kana": "わたしょ",  "rc_name": "綿所",  "rc_address": "兵庫県姫路市土山七丁目831-3",  "lng": "134.665795",  "lat": "34.836685"}, 
   { "rc_kana": "べっしょ",  "rc_name": "別所",  "rc_address": "兵庫県姫路市東今宿三丁目781-4",  "lng": "0",  "lat": "0"}, 
@@ -405,7 +406,8 @@ function initMap() {
         infoWindow[i].open(map, markers[i]); // 吹き出しの表示
       });
     }
-  }
+
+ }
 
   let markerCluster = new MarkerClusterer(map, markers, {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
