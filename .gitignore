@@ -8,5 +8,3 @@ typings/
 node_modules
 package-lock.json
 yarn.lock
-
-x
