@@ -2,7 +2,7 @@ let infoWindow = []
 
 // マーカーを立てる場所名・緯度・経度
 
-let locations = [
+const locations = [
   { "rc_kana": "ひおかだいに",  "rc_name": "日岡第二",  "rc_address": "兵庫県加古川市加古川町中津字樋掛388-2",  "lng": "134.850095",  "lat": "34.770854"}, 
   { "rc_kana": "ひおかだいさん",  "rc_name": "日岡第三",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "ひおかだいよん",  "rc_name": "日岡第四",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
@@ -370,21 +370,21 @@ function initMap() {
     zoom: 15 // 地図のズームを指定
   });
 
-  let styleOptions = [{
+  const styleOptions = [{
     featureType: 'all',
     elementType: 'labels',
     stylers: [{
       visibility: 'off'
     }]
   }];
-  let mapType = new google.maps.StyledMapType(styleOptions);
+  const mapType = new google.maps.StyledMapType(styleOptions);
   map.mapTypes.set('noText', mapType);
   map.setMapTypeId('noText');
 
-  let markers = locations.map(function (locations, i) {
+  const markers = locations.map(function (locations, i) {
     return new google.maps.Marker({
       position: locations,
-      // label: locations[i].rc_kana,
+      // label: locations.rc_name,
       icon: {
         url: 'img/icon/humikiri.png'
       }
@@ -394,7 +394,7 @@ function initMap() {
 
   for (let i = 0; i < locations.length; i++) {
     mapContent =
-      `<div class="map"><h1 style="margin: 0;padding: 0;">${locations[i]['rc_name']}</h1>
+      `<div class="map"><h1>${locations[i]['rc_name']}</h1>
       ${locations[i]['rc_kana']}<br>
       <ons-button modifier="quiet" id="datail">詳細をみる</ons-button></div>`;
     infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
@@ -409,7 +409,7 @@ function initMap() {
 
  }
 
-  let markerCluster = new MarkerClusterer(map, markers, {
+  const markerCluster = new MarkerClusterer(map, markers, {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
   });
 }
