@@ -3,13 +3,16 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/65141ac4-fec2-4e56-8a75-a33ae31f6ad3/deploy-status)](https://app.netlify.com/sites/rc-map/deploys)
 
 
-## イメージ
+## イメージ (Last Update: 2019/05/20)
 
-### PC
+### iOS (iPhoneXsMax)
+<img src="./img/ss_iphonex_1.png" width="30%"> <img src="./img/ss_iphonex_2.png" width="30%">
+
+### Android (XPERIA10)
+<img src="./img/ss_xperia10_1.png" width="30%"> <img src="./img/ss_xperia10_2.png" width="30%">
+
+### ブラウザ (Chrome for Mac)
 <img src="./img/ss_pc.png" width="60%">
-
-### SP (iPhoneX)
-<img src="./img/ss_iphonex.png" width="30%">
 
 ## 開発環境
 - Apache Cordova
