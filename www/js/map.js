@@ -1,3 +1,5 @@
+'use strict';
+
 var infoWindow = []
 
 // マーカーを立てる場所名・緯度・経度
