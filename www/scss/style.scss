@@ -24,15 +24,20 @@ p {
 
 .map {
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 // .gm-svpc {
 //     display: none;
 // }
 
-.station-name{
+.station-name {
     padding: 0;
 }
+
+
+// ルビ
 
 [data-ruby] {
     position: relative;

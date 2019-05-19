@@ -1,9 +1,10 @@
-let infoWindow = [];
+var infoWindow = []
 
 // マーカーを立てる場所名・緯度・経度
-let locations = [
+
+var locations = [
   { "rc_kana": "ひおかだいに",  "rc_name": "日岡第二",  "rc_address": "兵庫県加古川市加古川町中津字樋掛388-2",  "lng": "134.850095",  "lat": "34.770854"}, 
-  { "rc_rc_kana": "ひおかだいさん",  "rc_name": "日岡第三",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
+  { "rc_kana": "ひおかだいさん",  "rc_name": "日岡第三",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "ひおかだいよん",  "rc_name": "日岡第四",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "ひおか",  "rc_name": "日岡",  "rc_address": "兵庫県加古川市加古川町大野字イトミ203-4",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "おおのにし",  "rc_name": "大野西",  "rc_address": "兵庫県加古川市加古川町大野字早瀬1155-3",  "lng": "0",  "lat": "0"}, 
@@ -173,9 +174,9 @@ let locations = [
   { "rc_kana": "にししょうひがし",  "rc_name": "西庄東",  "rc_address": "兵庫県姫路市西庄字九堀121-3",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "にししょうにし",  "rc_name": "西庄西",  "rc_address": "兵庫県姫路市西庄字九堀121-3",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "はっちょう",  "rc_name": "八町",  "rc_address": "兵庫県姫路市西庄字九堀154-3",  "lng": "0",  "lat": "0"}, 
-  { "rc_kana": "まえかわいち",  "rc_name": "前川一",  "rc_address": "兵庫県姫路市土山四丁目630-2",  "lng": "134.669186",  "lat": "34.832388"}, 
+  { "rc_kana": "まえかわいち",  "rc_name": "前川一",  "rc_address": "兵庫県姫路市土山四丁目630-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "まえかわ",  "rc_name": "前川",  "rc_address": "兵庫県姫路市土山四丁目648-3",  "lng": "0",  "lat": "0"}, 
-  { "rc_kana": "みやのまえ",  "rc_name": "宮の前（1）",  "rc_address": "兵庫県姫路市土山四丁目545-2",  "lng": "134.669186",  "lat": "34.832388"}, 
+  { "rc_kana": "みやのまえ",  "rc_name": "宮の前（1）",  "rc_address": "兵庫県姫路市土山四丁目545-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "みやのにし",  "rc_name": "宮の西",  "rc_address": "兵庫県姫路市土山六丁目744-2",  "lng": "134.665659",  "lat": "34.833083"}, 
   { "rc_kana": "わたしょ",  "rc_name": "綿所",  "rc_address": "兵庫県姫路市土山七丁目831-3",  "lng": "134.665795",  "lat": "34.836685"}, 
   { "rc_kana": "べっしょ",  "rc_name": "別所",  "rc_address": "兵庫県姫路市東今宿三丁目781-4",  "lng": "0",  "lat": "0"}, 
@@ -350,12 +351,12 @@ let locations = [
   { "rc_kana": "ふくうらだいいち",  "rc_name": "福浦第一",  "rc_address": "兵庫県赤穂市福浦字東木場3103-8",  "lng": "134.329729",  "lat": "34.746761"}
   ];
 
- for (let i = 0; i < locations.length; i++) {
+ for (var i = 0; i < locations.length; i++) {
    locations[i].lat = parseFloat(locations[i].lat);
    locations[i].lng = parseFloat(locations[i].lng);
  }
 
-let mapInfo;
+var mapInfo;
 
 function initMap() {
   // 地図の作成
@@ -369,21 +370,21 @@ function initMap() {
     zoom: 15 // 地図のズームを指定
   });
 
-  let styleOptions = [{
+  var styleOptions = [{
     featureType: 'all',
     elementType: 'labels',
     stylers: [{
       visibility: 'off'
     }]
   }];
-  let mapType = new google.maps.StyledMapType(styleOptions);
+  var mapType = new google.maps.StyledMapType(styleOptions);
   map.mapTypes.set('noText', mapType);
   map.setMapTypeId('noText');
 
-  let markers = locations.map(function (locations, i) {
+  var markers = locations.map(function (locations, i) {
     return new google.maps.Marker({
       position: locations,
-      // label: locations[i].rc_kana,
+      // label: locations.rc_name,
       icon: {
         url: 'img/icon/humikiri.png'
       }
@@ -391,9 +392,9 @@ function initMap() {
 
   });
 
-  for (let i = 0; i < locations.length; i++) {
+  for (var i = 0; i < locations.length; i++) {
     mapContent =
-      `<div class="map"><h1 style="margin: 0;padding: 0;">${locations[i]['rc_name']}</h1>
+      `<div class="map"><h1>${locations[i]['rc_name']}</h1>
       ${locations[i]['rc_kana']}<br>
       <ons-button modifier="quiet" id="datail">詳細をみる</ons-button></div>`;
     infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
@@ -405,9 +406,10 @@ function initMap() {
         infoWindow[i].open(map, markers[i]); // 吹き出しの表示
       });
     }
-  }
 
-  let markerCluster = new MarkerClusterer(map, markers, {
+ }
+
+  var markerCluster = new MarkerClusterer(map, markers, {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
   });
 }
