@@ -1,48 +1,22 @@
 module.exports = {
   mode: 'development',
-  entry: './www/src/entry.js',
+  entry: __dirname + "/www/index.js",
   output: {
-    // eslint-disable-next-line no-path-concat
-    path: __dirname + '/www/js',
-    filename: 'index.js'
+    path: __dirname + 'www/dist',
+    filename: 'bundle.js',
   },
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: [
-        'babel-loader'
-      ]
-    },
-    {
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        {
-          loader: 'css-loader',
-          options: {
-            importLoaders: 1
-          }
-        },
-        'postcss-loader'
-      ]
-    },
-    {
-      test: /\.html$/,
-      use: [
-        'html-loader'
-      ]
-    },
-    {
-      test: /\.svg$/,
-      use: [{
-        loader: 'svg-inline-loader',
-        options: {
-          removeTags: true,
-          removingTags: ['sodipodi:namedview']
-        }
+      rules: [{
+        test: /\.js/,
+        exclude: /node_modules/,
+        use: [{
+          loader: 'babel-loader',
+        }, ]
       }]
+    },
+    // 以下追記箇所(2)
+    resolve: {
+      modules: [`${__dirname}/www`, 'node_modules'],
+      extensions: ['.js'],
     }
-    ]
   }
-}

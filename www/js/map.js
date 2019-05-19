@@ -1,10 +1,12 @@
 'use strict';
 
-var infoWindow = []
+import '@babel/polyfill'
+
+let infoWindow = []
 
 // マーカーを立てる場所名・緯度・経度
 
-var locations = [
+let locations = [
   { "rc_kana": "ひおかだいに",  "rc_name": "日岡第二",  "rc_address": "兵庫県加古川市加古川町中津字樋掛388-2",  "lng": "134.850095",  "lat": "34.770854"}, 
   { "rc_kana": "ひおかだいさん",  "rc_name": "日岡第三",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "ひおかだいよん",  "rc_name": "日岡第四",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
@@ -353,12 +355,12 @@ var locations = [
   { "rc_kana": "ふくうらだいいち",  "rc_name": "福浦第一",  "rc_address": "兵庫県赤穂市福浦字東木場3103-8",  "lng": "134.329729",  "lat": "34.746761"}
   ];
 
- for (var i = 0; i < locations.length; i++) {
+ for (let i = 0; i < locations.length; i++) {
    locations[i].lat = parseFloat(locations[i].lat);
    locations[i].lng = parseFloat(locations[i].lng);
  }
 
-var mapInfo;
+let mapInfo;
 
 function initMap() {
   // 地図の作成
@@ -372,18 +374,18 @@ function initMap() {
     zoom: 15 // 地図のズームを指定
   });
 
-  var styleOptions = [{
+  let styleOptions = [{
     featureType: 'all',
     elementType: 'labels',
     stylers: [{
       visibility: 'off'
     }]
   }];
-  var mapType = new google.maps.StyledMapType(styleOptions);
+  let mapType = new google.maps.StyledMapType(styleOptions);
   map.mapTypes.set('noText', mapType);
   map.setMapTypeId('noText');
 
-  var markers = locations.map(function (locations, i) {
+  let markers = locations.map(function (locations, i) {
     return new google.maps.Marker({
       position: locations,
       // label: locations.rc_name,
@@ -394,7 +396,7 @@ function initMap() {
 
   });
 
-  for (var i = 0; i < locations.length; i++) {
+  for (let i = 0; i < locations.length; i++) {
     mapContent =
       `<div class="map"><h1>${locations[i]['rc_name']}</h1>
       ${locations[i]['rc_kana']}<br>
@@ -411,7 +413,7 @@ function initMap() {
 
  }
 
-  var markerCluster = new MarkerClusterer(map, markers, {
+  let markerCluster = new MarkerClusterer(map, markers, {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
   });
 }
