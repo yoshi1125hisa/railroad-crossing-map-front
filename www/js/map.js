@@ -389,7 +389,6 @@ function initMap() {
         url: 'img/icon/humikiri.png'
       }
     });
-
   });
 
   for (let i = 0; i < locations.length; i++) {
