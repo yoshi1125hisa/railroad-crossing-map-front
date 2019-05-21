@@ -9,6 +9,7 @@
     content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
   <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="components/loader.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
@@ -33,9 +34,9 @@
         </div>
 
         <div class="toolbar__right">
-          <!-- <span class="toolbar-button">
-                  <ons-icon icon="fa-cog" style="font-size:25px;"></ons-icon>
-                      </span> -->
+          <span class="toolbar-button">
+            <ons-icon icon="refresh" style="font-size:25px;"></ons-icon>
+          </span>
         </div>
       </div>
     </ons-toolbar>
@@ -70,8 +71,7 @@
       <ons-list-header>プロフィール</ons-list-header>
       <ons-list-item>
         <div class="left">
-          <img class="list-item__thumbnail"
-            src="img/profile/yoshi.jpeg">`
+          <img class="list-item__thumbnail" src="img/profile/yoshi.jpeg">`
         </div>
         <div class="center">
           <span class="list-item__title">Yoshihisa Kaino</span><span class="list-item__subtitle">兵庫県 姫路市</span>

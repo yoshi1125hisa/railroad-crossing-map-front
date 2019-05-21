@@ -1,8 +1,7 @@
-var infoWindow = []
+let infoWindow = []
 
 // マーカーを立てる場所名・緯度・経度
-
-var locations = [
+let locations = [
   { "rc_kana": "ひおかだいに",  "rc_name": "日岡第二",  "rc_address": "兵庫県加古川市加古川町中津字樋掛388-2",  "lng": "134.850095",  "lat": "34.770854"}, 
   { "rc_kana": "ひおかだいさん",  "rc_name": "日岡第三",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
   { "rc_kana": "ひおかだいよん",  "rc_name": "日岡第四",  "rc_address": "兵庫県加古川市加古川町大野字穴バリ388-2",  "lng": "0",  "lat": "0"}, 
@@ -351,37 +350,38 @@ var locations = [
   { "rc_kana": "ふくうらだいいち",  "rc_name": "福浦第一",  "rc_address": "兵庫県赤穂市福浦字東木場3103-8",  "lng": "134.329729",  "lat": "34.746761"}
   ];
 
- for (var i = 0; i < locations.length; i++) {
+  // 空白部分を避けるコードを書く
+ for (let i = 0; i < locations.length; i++) {
    locations[i].lat = parseFloat(locations[i].lat);
    locations[i].lng = parseFloat(locations[i].lng);
  }
 
-var mapInfo;
+let mapInfo;
 
 function initMap() {
   // 地図の作成
   mapInfo = new google.maps.LatLng({
-    lat: parseFloat(locations[0]['lat']),
-    lng: parseFloat(locations[0]['lng'])
+    lat: locations[0]['lat'],
+    lng: locations[0]['lng']
   }); // 緯度経度のデータ作成
 
   map = new google.maps.Map(document.getElementById('map'), { // #mapに地図を埋め込む
     center: mapInfo, // 地図の中心を指定
-    zoom: 15 // 地図のズームを指定
+    zoom: 11 // 地図のズームを指定
   });
 
-  var styleOptions = [{
+  const styleOptions = [{
     featureType: 'all',
     elementType: 'labels',
     stylers: [{
       visibility: 'off'
     }]
   }];
-  var mapType = new google.maps.StyledMapType(styleOptions);
+  const mapType = new google.maps.StyledMapType(styleOptions);
   map.mapTypes.set('noText', mapType);
   map.setMapTypeId('noText');
 
-  var markers = locations.map(function (locations, i) {
+  const markers = locations.map(function (locations, i) {
     return new google.maps.Marker({
       position: locations,
       // label: locations.rc_name,
@@ -392,8 +392,8 @@ function initMap() {
 
   });
 
-  for (var i = 0; i < locations.length; i++) {
-    mapContent =
+  for (let i = 0; i < locations.length; i++) {
+    const mapContent =
       `<div class="map"><h1>${locations[i]['rc_name']}</h1>
       ${locations[i]['rc_kana']}<br>
       <ons-button modifier="quiet" id="datail">詳細をみる</ons-button></div>`;
@@ -409,7 +409,7 @@ function initMap() {
 
  }
 
-  var markerCluster = new MarkerClusterer(map, markers, {
+  const markerCluster = new MarkerClusterer(map, markers, {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
   });
 }
