@@ -13,3 +13,9 @@ if (ons.platform.isIPhoneX()) { // iPhone X であるか否かを判定
 document.addEventListener('prechange', function (event) {
   document.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute('label')
 })
+
+// 画面リロード
+let refreshView = function () {
+  console.log("Hello world!");
+  location.reload();
+}
