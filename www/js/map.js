@@ -370,6 +370,7 @@ function initMap() {
     zoom: 11 // 地図のズームを指定
   });
 
+  // Styleのオプション（名前非表示など）
   const styleOptions = [{
     featureType: 'all',
     elementType: 'labels',
@@ -384,6 +385,7 @@ function initMap() {
   const markers = locations.map(function (locations, i) {
     return new google.maps.Marker({
       position: locations,
+      // ラベルの表示(今回はInfoWindowがあるためなしでもOK？)
       // label: locations.rc_name,
       icon: {
         url: 'img/icon/humikiri.png'
@@ -393,19 +395,21 @@ function initMap() {
 
   for (let i = 0; i < locations.length; i++) {
     const mapContent =
-      `<div class="map"><h1>${locations[i]['rc_name']}</h1>
-      ${locations[i]['rc_kana']}<br>
-      <ons-button modifier="quiet" id="datail">詳細をみる</ons-button></div>`;
+      `<div class="map">
+      <p style="margin:0;padding:0;">${locations[i]['rc_kana']}</p>
+      <h1 style="margin:0;padding:0;">${locations[i]['rc_name']}</h1>
+      <ons-button modifier="quiet" id="datail" style="margin:0;padding:0;">詳細をみる</ons-button></div>`;
     infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
       content: mapContent // 吹き出しに表示する内容
     });
     markerEvent(i); // マーカーにクリックイベントを追加
     function markerEvent(i) {
       markers[i].addListener('click', function () { // マーカーをクリックしたとき
+        // クリックされたマーカーの情報を保持
         infoWindow[i].open(map, markers[i]); // 吹き出しの表示
+        // 前のマーカーを消す
       });
     }
-
  }
 
   const markerCluster = new MarkerClusterer(map, markers, {

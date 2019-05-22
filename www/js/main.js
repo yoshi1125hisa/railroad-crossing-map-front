@@ -17,3 +17,10 @@ let refreshView = function () {
   // trueを引数にすることで、WEBサーバーの生データを取得する。 falseではキャッシュから取得。
   location.reload(true);
 }
+
+// お問い合わせ画面への遷移 (Cordovaプラグインを使ってアプリ版は別ブラウザで起動できるようにする)
+// https://github.com/apache/cordova-plugin-inappbrowser （未実装）
+let contact = function () {
+  window.open("https://www.yoshi1125hisa.com/");
+}
+
