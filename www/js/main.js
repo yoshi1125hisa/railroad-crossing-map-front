@@ -1,3 +1,5 @@
+'use strict';
+
 if (ons.platform.isIPhoneX()) { // iPhone X であるか否かを判定
   // <html> 要素に属性を追加（値として空文字列を設定）
   document.documentElement.setAttribute('onsflag-iphonex-portrait', '') // 縦
@@ -24,3 +26,14 @@ let contact = function () {
   window.open("https://www.yoshi1125hisa.com/");
 }
 
+let privacyPolicy = function () {
+  window.open("https://www.yoshi1125hisa.com/");
+}
+
+let oss = function () {
+  window.open("https://www.yoshi1125hisa.com/");
+}
+
+let lisence = function () {
+  window.open("https://www.yoshi1125hisa.com/");
+}
