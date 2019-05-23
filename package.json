@@ -48,7 +48,7 @@
         "test": "npm-run-all -p dev scss prefix"
     },
     "devDependencies": {
-        "@babel/core": "7.4.4",
+        "@babel/core": "7.4.5",
         "autoprefixer": "9.5.1",
         "babel-loader": "8.0.6",
         "babel-preset-es2015": "6.24.1",
@@ -68,7 +68,7 @@
         "postcss-loader": "3.0.0",
         "style-loader": "0.23.1",
         "svg-inline-loader": "0.8.0",
-        "webpack": "4.32.0",
+        "webpack": "4.32.2",
         "webpack-cli": "3.3.2",
         "webpack-dev-server": "3.4.1"
     }
