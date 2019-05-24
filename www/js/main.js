@@ -18,7 +18,8 @@ document.addEventListener('prechange', function (event) {
 // 画面リロード
 let refreshView = function () {
   // trueを引数にすることで、WEBサーバーの生データを取得する。 falseではキャッシュから取得。
-  location.reload(true);
+  // location.reload(true);
+  initMap();
 }
 
 // お問い合わせ画面への遷移 (Cordovaプラグインを使ってアプリ版は別ブラウザで起動できるようにする)
