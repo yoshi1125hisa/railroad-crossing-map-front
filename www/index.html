@@ -105,6 +105,22 @@
         </ons-list-item>
     </ons-page>
   </ons-template>
+
+<ons-template id="dialog.html">
+  <ons-dialog id="my-dialog">
+    <div style="text-align: center; padding: 12px;">
+      <br>
+      <p>
+        安全に気をつけて本アプリを使用してください。
+      </p>
+<br>
+      <p>
+        <ons-button onclick="hideDialog('my-dialog')">閉じる</ons-button>
+      </p>
+    </div>
+  </ons-dialog>
+  </ons-template>
+
   <script src="js/map.js"></script>
   <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
   </script>

@@ -8,6 +8,7 @@ if (ons.platform.isIPhoneX()) { // iPhone X であるか否かを判定
 
 ons.ready(function () {
   console.log('Onsen UI is ready!')
+  showTemplateDialog()
 })
 
 document.addEventListener('prechange', function (event) {
@@ -37,3 +38,22 @@ let oss = function () {
 let lisence = function () {
   window.open("https://www.yoshi1125hisa.com/");
 }
+
+let showTemplateDialog = function () {
+  let dialog = document.getElementById('my-dialog');
+
+  if (dialog) {
+    dialog.show();
+  } else {
+    ons.createElement('dialog.html', { append: true })
+      .then(function (dialog) {
+        dialog.show();
+      });
+  }
+};
+
+let hideDialog = function (id) {
+  document
+    .getElementById(id)
+    .hide();
+};
