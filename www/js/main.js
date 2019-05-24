@@ -40,7 +40,7 @@ let lisence = function () {
 }
 
 let showTemplateDialog = function () {
-  let dialog = document.getElementById('my-dialog');
+  let dialog = document.getElementById('first-dialog');
 
   if (dialog) {
     dialog.show();
