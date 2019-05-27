@@ -449,12 +449,3 @@ get(REQUEST_URL)
     console.error(error);
 
   })
-
-let element = document.getElementById('List');
-
-  //要素の作成
-  var div = document.createElement('div');
-  div.textContent = 'hoge';
-
-  //最後の子要素として追加
-  element.appendChild(div);
