@@ -60,7 +60,7 @@ p {
 }
 
 
-.dialog{
+.dialog {
     &-content {
         text-align: center;
         padding: 12px;
@@ -73,4 +73,11 @@ p {
     &-button {
         margin: 0 0 20px 0;
     }
+}
+
+#map-searchbox {
+    position: absolute;
+    top: 60px;
+    z-index: 1;
+    margin: 0 5%;
 }
