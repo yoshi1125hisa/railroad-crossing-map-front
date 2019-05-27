@@ -12,7 +12,8 @@ ons.ready(function () {
 })
 
 document.addEventListener('prechange', function (event) {
-  document.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute('label')
+  document.querySelector('ons-toolbar .toolbar__center').innerHTML = event.tabItem.getAttribute('label');
+
 })
 
 // 画面リロード
