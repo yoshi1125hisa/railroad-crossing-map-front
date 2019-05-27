@@ -433,7 +433,7 @@ function get(REQUEST_URL) {
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         let result = xhr;
-        resolve(result);
+        resolve(result.responseText);
       }
     }
   });
