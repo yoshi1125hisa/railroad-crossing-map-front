@@ -23,6 +23,7 @@
   <ons-navigator swipeable id="Navigator"></ons-navigator>
   <ons-page>
 
+
     <ons-toolbar>
       <div class="toolbar" id="top-toolbar">
         <div class="toolbar__left">
@@ -57,6 +58,8 @@
 
   <ons-template id="maps.html">
     <ons-page id="Maps">
+          <div class="progress-bar progress-bar--indeterminate">
+          </div>
       <input type="search" value="" placeholder="Search" class="search-input search-input-map" style="width: 90%;margin: 0 5%;">
       <div id="map"></div>
     </ons-page>
@@ -64,6 +67,8 @@
 
   <ons-template id="list.html">
     <ons-page id="List">
+                <div class="progress-bar progress-bar--indeterminate">
+                </div>
        <input type="search" value="" placeholder="Search" class="search-input search-input-list"
          style="width: 90%;margin: 5%;">
       <ons-list-header>リスト</ons-list-header>
@@ -72,6 +77,8 @@
 
   <ons-template id="setting.html">
     <ons-page id="Setting">
+                <div class="progress-bar progress-bar--indeterminate">
+                </div>
       <!-- <ons-list-header>プロフィール</ons-list-header>
       <ons-list-item>
         <div class="left">

@@ -84,6 +84,22 @@ p {
     }
 
     &-list {
+        
+    }
+}
 
+.gm{
+    &-control-active,
+    &-fullscreen-control {
+        display: none;
+    }
+}
+
+.progress-bar{
+    &--indeterminate{
+        position: absolute;
+        top: 1%;
+        width: 100%;
+        z-index: 1;
     }
 }
