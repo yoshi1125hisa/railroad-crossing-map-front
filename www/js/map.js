@@ -434,6 +434,8 @@ function get(REQUEST_URL) {
       if (xhr.readyState === 4 && xhr.status === 200) {
         let result = xhr;
         resolve(result.responseText);
+      } else if (xhr.status !== 200) {
+        reject('エラーです！');
       }
     }
   });
@@ -442,4 +444,8 @@ function get(REQUEST_URL) {
 get(REQUEST_URL)
   .then(function (response) {
     console.log("Scucess!", response);
+  },function (error) {
+    //エラー処理を記述する
+    console.error(error);
+
   })
