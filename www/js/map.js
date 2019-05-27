@@ -1,5 +1,8 @@
 let infoWindow = []
 
+// スプレッドシートAPIのURL
+const REQUEST_URL = "https://script.google.com/macros/s/AKfycbyU4AbIhyVPz9OJdaxYNZgowuYDPHFNcS3_XvsytNmLCzg2oCSa/exec"
+
 // マーカーを立てる場所名・緯度・経度
 let locations = [
 { "rc_kana": "ひおかだいに",  "rc_name": "日岡第二",  "rc_address": "兵庫県加古川市加古川町中津字樋掛388-2",  "lng": "134.850095",  "lat": "34.770854"}, 
@@ -415,3 +418,28 @@ function initMap() {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
   }, { style: [{ color: 'white'}] });
 }
+
+// Ajex通信用の関数/
+
+function get(REQUEST_URL) {
+
+  return new Promise(function (resolve) {
+
+    let xhr = new XMLHttpRequest();
+
+    xhr.open('GET', REQUEST_URL);
+    xhr.send();
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        let result = xhr;
+        resolve(result);
+      }
+    }
+  });
+}
+
+get(REQUEST_URL)
+  .then(function (response) {
+    console.log("Scucess!", response);
+  })

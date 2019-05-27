@@ -39,7 +39,7 @@ p {
 //     display: none;
 // }
 
-.station-name {
+.rc-name {
     padding: 0;
 }
 
@@ -47,7 +47,7 @@ p {
 // ルビ
 [data-ruby] {
     position: relative;
-    
+
     &::before {
         content: attr(data-ruby);
         position: absolute;
