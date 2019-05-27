@@ -3,7 +3,7 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/65141ac4-fec2-4e56-8a75-a33ae31f6ad3/deploy-status)](https://app.netlify.com/sites/rc-map/deploys)
 
 
-## イメージ (Last Update: 2019/05/20)
+## イメージ (Last Update: 2019/05/27)
 
 ### iOS (iPhoneXsMax)
 <img src="./img/ss_iphonex_1.png" width="30%"> <img src="./img/ss_iphonex_2.png" width="30%">
