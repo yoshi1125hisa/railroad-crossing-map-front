@@ -57,13 +57,15 @@
 
   <ons-template id="maps.html">
     <ons-page id="Maps">
-      <input id="map-searchbox" type="search" value="" placeholder="Search" class="search-input" style="width: 90%;">
+      <input type="search" value="" placeholder="Search" class="search-input search-input-map" style="width: 90%;margin: 0 5%;">
       <div id="map"></div>
     </ons-page>
   </ons-template>
 
   <ons-template id="list.html">
     <ons-page id="List">
+       <input type="search" value="" placeholder="Search" class="search-input search-input-list"
+         style="width: 90%;margin: 5%;">
       <ons-list-header>リスト</ons-list-header>
     </ons-page>
   </ons-template>
@@ -104,6 +106,15 @@
             <ons-switch></ons-switch>
           </div>
         </ons-list-item>
+         <ons-list-header>開発者</ons-list-header>
+         <ons-list-item>
+           <div class="left">
+             <img class="list-item__thumbnail" src="img/profile/yoshi.jpeg">
+           </div>
+           <div class="center">
+             <span class="list-item__title">Yoshihisa Kaino</span><span class="list-item__subtitle">@yoshi1125hisa</span>
+           </div>
+         </ons-list-item>
     </ons-page>
   </ons-template>
 
