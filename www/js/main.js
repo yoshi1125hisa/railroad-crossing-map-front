@@ -38,7 +38,7 @@ let oss = function () {
 }
 
 let lisence = function () {
-  window.open("https://www.yoshi1125hisa.com/");
+  window.open("https://raw.githubusercontent.com/yoshi1125hisa/rc-map_front/develop/LICENSE");
 }
 
 let showTemplateDialog = function () {

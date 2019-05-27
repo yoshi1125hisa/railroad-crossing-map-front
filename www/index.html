@@ -26,9 +26,9 @@
     <ons-toolbar>
       <div class="toolbar" id="top-toolbar">
         <div class="toolbar__left">
-          <!-- <span class="toolbar-button">
+          <span class="toolbar-button">
                 <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
-               </span> -->
+               </span>
         </div>
 
         <div class="toolbar__center">
@@ -109,14 +109,11 @@
 <ons-template id="dialog.html">
   <ons-dialog id="first-dialog">
     <div class="dialog-content">
-      <br>
-      <p>
+      <p class="dialog-text">
         安全に気をつけて本アプリを使用してください。
       </p>
-<br>
-      <p>
-        <ons-button onclick="hideDialog('first-dialog')">閉じる</ons-button>
-      </p>
+        <ons-button class="dialog-button" onclick=" hideDialog('first-dialog')">閉じる</ons-button>
+
     </div>
   </ons-dialog>
   </ons-template>

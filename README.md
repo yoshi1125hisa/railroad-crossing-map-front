@@ -8,6 +8,10 @@
 ### iOS (iPhoneXsMax)
 <img src="./img/ss_iphonex_1.png" width="30%"> <img src="./img/ss_iphonex_2.png" width="30%">
 
+### Android (PixelXL2)
+<img src="./img/ss_Pixel2XL_1.png" width="30%"> <img src="./img/ss_Pixel2XL_2.png" width="30%">
+
+
 ### Android (XPERIA10)
 <img src="./img/ss_xperia10_1.png" width="30%"> <img src="./img/ss_xperia10_2.png" width="30%">
 
