@@ -424,16 +424,15 @@ function initMap() {
 function get(REQUEST_URL) {
 
   return new Promise(function (resolve) {
-
+    // ダイアログ表示
     let xhr = new XMLHttpRequest();
-
     xhr.open('GET', REQUEST_URL);
     xhr.send();
-
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         let result = xhr;
         resolve(result.responseText);
+        // ダイヤログ非表示
       } else if (xhr.status !== 200) {
         reject('エラーです！');
       }
@@ -447,5 +446,4 @@ get(REQUEST_URL)
   },function (error) {
     //エラー処理を記述する
     console.error(error);
-
   })
