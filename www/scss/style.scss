@@ -1,8 +1,7 @@
-/* バウンススクロールの禁止 */
-
 html,
 body {
     overscroll-behavior: none;
+    overflow: hidden;
 }
 
 #top-toolbar {
@@ -15,7 +14,6 @@ body {
 #map {
     height: 100%;
     width: 100%;
-    max-width: none;
 }
 
 h1,
@@ -84,13 +82,15 @@ p {
 }
 
 .gm {
-
+    // Full display is not allowed
     &-control-active,
     &-fullscreen-control {
         display: none;
     }
 }
 
+
+// Top progress bar
 .progress-bar {
     &--indeterminate {
         position: absolute;
