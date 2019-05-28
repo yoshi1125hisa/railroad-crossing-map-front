@@ -7,17 +7,15 @@ body {
 
 #top-toolbar {
     position: fixed;
-    /* ヘッダーの固定 */
     top: 0px;
-    /* 位置(上0px) */
     left: 0px;
-    /* 位置(右0px) */
 }
 
 /* 地図 */
 #map {
     height: 100%;
     width: 100%;
+    max-width: none;
 }
 
 h1,
@@ -33,6 +31,7 @@ p {
     text-align: center;
     margin: 0;
     padding: 0;
+    max-width: none;
 }
 
 // .gm-svpc {
@@ -84,15 +83,16 @@ p {
     }
 }
 
-.gm{
+.gm {
+
     &-control-active,
     &-fullscreen-control {
         display: none;
     }
 }
 
-.progress-bar{
-    &--indeterminate{
+.progress-bar {
+    &--indeterminate {
         position: absolute;
         top: 1%;
         width: 100%;

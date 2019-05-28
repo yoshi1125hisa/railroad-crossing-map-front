@@ -1,5 +1,6 @@
 <!DOCTYPE HTML>
 <html>
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport"
@@ -7,7 +8,7 @@
   <meta http-equiv="Content-Security-Policy"
     content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
   <title>踏切マップ</title>
-    <script src="components/loader.js"></script>
+  <script src="components/loader.js"></script>
   <script src="lib/onsenui/js/onsenui.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
   <link rel="stylesheet" href="css/style.css">
@@ -28,8 +29,8 @@
       <div class="toolbar" id="top-toolbar">
         <div class="toolbar__left">
           <span class="toolbar-button">
-                <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
-               </span>
+            <i class="ion-navicon" style="font-size:32px; vertical-align:-6px;"></i>
+          </span>
         </div>
 
         <div class="toolbar__center">
@@ -58,41 +59,42 @@
 
   <ons-template id="maps.html">
     <ons-page id="Maps">
-          <div class="progress-bar progress-bar--indeterminate">
-          </div>
-      <input type="search" value="" placeholder="Search" class="search-input search-input-map" style="width: 90%;margin: 0 5%;">
+      <!-- <div class="progress-bar progress-bar--indeterminate">
+          </div> -->
+      <input type="search" value="" placeholder="Search" class="search-input search-input-map"
+        style="width: 90%;margin: 0 5%;" onchange="ons.notification.alert('Searched for: ' + this.value)">
       <div id="map"></div>
-    <ons-speed-dial position="bottom left" direction="up">
-      <ons-fab>
-        <ons-icon icon="md-share"></ons-icon>
-      </ons-fab>
-      <ons-speed-dial-item>
-        <ons-icon icon="md-twitter"></ons-icon>
-      </ons-speed-dial-item>
-      <ons-speed-dial-item>
-        <ons-icon icon="md-facebook"></ons-icon>
-      </ons-speed-dial-item>
-      <ons-speed-dial-item>
-        <ons-icon icon="md-google-plus"></ons-icon>
-      </ons-speed-dial-item>
-    </ons-speed-dial>
+      <ons-speed-dial position="bottom left" direction="up">
+        <ons-fab>
+          <ons-icon icon="md-share"></ons-icon>
+        </ons-fab>
+        <ons-speed-dial-item>
+          <ons-icon icon="md-twitter"></ons-icon>
+        </ons-speed-dial-item>
+        <ons-speed-dial-item>
+          <ons-icon icon="md-facebook"></ons-icon>
+        </ons-speed-dial-item>
+        <ons-speed-dial-item>
+          <ons-icon icon="md-google-plus"></ons-icon>
+        </ons-speed-dial-item>
+      </ons-speed-dial>
     </ons-page>
   </ons-template>
 
   <ons-template id="list.html">
     <ons-page id="List">
-                <div class="progress-bar progress-bar--indeterminate">
-                </div>
-       <input type="search" value="" placeholder="Search" class="search-input search-input-list"
-         style="width: 90%;margin:1% 5%;">
+      <!-- <div class="progress-bar progress-bar--indeterminate">
+                </div> -->
+      <input type="search" value="" placeholder="Search" class="search-input search-input-list"
+        style="width: 90%;margin:1% 5%;">
       <ons-list-header>リスト</ons-list-header>
     </ons-page>
   </ons-template>
 
   <ons-template id="setting.html">
     <ons-page id="Setting">
-                <div class="progress-bar progress-bar--indeterminate">
-                </div>
+      <!-- <div class="progress-bar progress-bar--indeterminate">
+                </div> -->
       <!-- <ons-list-header>プロフィール</ons-list-header>
       <ons-list-item>
         <div class="left">
@@ -127,28 +129,36 @@
             <ons-switch></ons-switch>
           </div>
         </ons-list-item>
-         <ons-list-header>開発者</ons-list-header>
-         <ons-list-item>
-           <div class="left">
-             <img class="list-item__thumbnail" src="img/profile/yoshi.jpeg">
-           </div>
-           <div class="center">
-             <span class="list-item__title">Yoshihisa Kaino</span><span class="list-item__subtitle">@yoshi1125hisa</span>
-           </div>
-         </ons-list-item>
+        <ons-list-header>開発者</ons-list-header>
+        <ons-list-item>
+          <div class="left">
+            <img class="list-item__thumbnail" src="img/profile/yoshi.jpeg">
+          </div>
+          <div class="center">
+            <span class="list-item__title">Yoshihisa Kaino</span><span class="list-item__subtitle">@yoshi1125hisa</span>
+          </div>
+        </ons-list-item>
     </ons-page>
   </ons-template>
 
-<ons-template id="dialog.html">
-  <ons-dialog id="first-dialog">
-    <div class="dialog-content">
-      <p class="dialog-text">
-        安全に気をつけて本アプリを使用してください。
-      </p>
+  <ons-template id="dialog.html">
+    <ons-dialog id="first-dialog">
+      <div class="dialog-content">
+        <p class="dialog-text">
+          安全に気をつけて本アプリを使用してください。
+        </p>
         <ons-button class="dialog-button" onclick=" hideDialog('first-dialog')">閉じる</ons-button>
 
-    </div>
-  </ons-dialog>
+      </div>
+    </ons-dialog>
+  </ons-template>
+
+  <ons-template id="loading-dialog.html">
+    <ons-dialog id="loading-dialog">
+      <div style="text-align: center; padding: 10px;">
+        <ons-progress-circular indeterminate></ons-progress-circular>
+      </div>
+    </ons-dialog>
   </ons-template>
 
   <script src="js/map.js"></script>

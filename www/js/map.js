@@ -416,8 +416,30 @@ function initMap() {
 
   const markerCluster = new MarkerClusterer(map, markers, {
     imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-  }, { style: [{ color: 'white'}] });
+  });
 }
+
+
+let showLoadingDialog = function () {
+  let loadingDialog = document.getElementById('loading-dialog');
+
+  if (loadingDialog) {
+    loadingDialog.show();
+  } else {
+    ons.createElement('loading-dialog.html', {
+        append: true
+      })
+      .then(function (loadingDialog) {
+        loadingDialog.show();
+      });
+  }
+};
+
+// let hideLoadingDialog = function (id) {
+//   document
+//     .getElementById(id)
+//     .hide();
+// };
 
 // Ajex通信用の関数/
 
@@ -425,14 +447,16 @@ function get(REQUEST_URL) {
 
   return new Promise(function (resolve) {
     // ダイアログ表示
+    // showLoadingDialog();
     let xhr = new XMLHttpRequest();
     xhr.open('GET', REQUEST_URL);
     xhr.send();
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         let result = xhr;
+        
         resolve(result.responseText);
-        // ダイヤログ非表示
+
       } else if (xhr.status !== 200) {
         reject('エラーです！');
       }
