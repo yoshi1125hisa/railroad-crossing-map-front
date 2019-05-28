@@ -122,7 +122,7 @@
     "gulp-replace": "1.0.0",
     "gulp-unzip": "1.0.1",
     "gulp-util": "3.0.8",
-    "gulp-zip": "4.2.0",
+    "gulp-zip": "5.0.0",
     "jsonschema": "1.2.4",
     "karma": "4.1.0",
     "karma-chai": "0.1.0",
