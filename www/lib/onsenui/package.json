@@ -149,7 +149,7 @@
     "rollup-plugin-string": "3.0.0",
     "rollup-plugin-visualizer": "1.1.1",
     "run-sequence": "2.2.1",
-    "typescript": "3.4.5",
+    "typescript": "3.5.1",
     "uglify-js": "3.5.15",
     "wcdoc": "0.1.19",
     "wdio-jasmine-framework": "0.3.8",
