@@ -354,6 +354,10 @@ let locations = [
 ];
   // 空白部分を避けるコードを書く
  for (let i = 0; i < locations.length; i++) {
+   if (locations[i].lat === "" || locations[i].lng === ""){
+    locations[i].lat = 0
+    locations[i].lng = 0
+   }
    locations[i].lat = parseFloat(locations[i].lat);
    locations[i].lng = parseFloat(locations[i].lng);
  }
@@ -429,7 +433,8 @@ function initMap() {
       // ラベルの表示(今回はInfoWindowがあるためなしでもOK？)
       // label: locations.rc_name,
       icon: {
-        url: 'img/icon/humikiri.png'
+        url: 'img/icon/humikiri.svg',
+        scaledSize: new google.maps.Size(48, 48)
       }
     });
   });
@@ -439,7 +444,7 @@ function initMap() {
       `<div class="map">
       <p style="margin:0;padding:0;">${locations[i]['rc_kana']}</p>
       <h1 style="margin:0;padding:0;">${locations[i]['rc_name']}</h1>
-      <ons-button modifier="quiet" id="datail" style="margin:0;padding:0;">詳細をみる</ons-button></div>`;
+      <ons-button modifier="quiet" id="datail" style="margin:0;padding:0;" onclick="alert(1)">詳細をみる</ons-button></div>`;
     infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
       content: mapContent // 吹き出しに表示する内容
     });
