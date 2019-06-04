@@ -1,7 +1,6 @@
 let infoWindow = []
 
-// スプレッドシートAPIのURL
-const REQUEST_URL = "https://script.google.com/macros/s/AKfycbyU4AbIhyVPz9OJdaxYNZgowuYDPHFNcS3_XvsytNmLCzg2oCSa/exec"
+const REQUEST_URL = "https://api.rc-map.com/v1/all.json"
 
 // マーカーを立てる場所名・緯度・経度
 let locations = [

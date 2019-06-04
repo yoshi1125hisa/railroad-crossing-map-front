@@ -77,6 +77,14 @@ p {
         position: absolute;
         z-index: 1;
         top: 60px;
+        width: 90%;
+        margin: 0 5%;
+        opacity: 0.6;
+    }
+
+    &-list {
+        width: 100%;
+        margin: 0;
     }
 }
 
