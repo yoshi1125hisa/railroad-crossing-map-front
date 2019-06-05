@@ -9,14 +9,12 @@ if (ons.platform.isIPhoneX()) { // iPhone X であるか否かを判定
   document.documentElement.setAttribute('onsflag-iphonex-landscape', '') // 横
 }
 
-ons.ready(function () {
-  console.log('Onsen UI is ready!')
-  // showTemplateDialog()
-   var infiniteList = document.getElementById('infinite-list');
+ons.ready(function() {
+  var infiniteList = document.getElementById('infinite-list');
 
   infiniteList.delegate = {
     createItemContent: function(i) {
-      return ons.createElement('<ons-list-item tappable>Item ' + i + '</ons-list-item>');
+      return ons.createElement('<ons-list-item>Item ' + i + '</ons-list-item>');
     },
     countItems: function() {
       return 10000;
@@ -24,7 +22,7 @@ ons.ready(function () {
   };
 
   infiniteList.refresh();
-})
+});
 
 document.addEventListener('prechange', function (event) {
   document.querySelector('ons-toolbar .toolbar__center').innerHTML = event.tabItem.getAttribute('label');

@@ -25,22 +25,22 @@
   <ons-page>
 
 
-      <ons-toolbar class="toolbar" id="top-toolbar">
-        <div class="toolbar__left">
-          <span class="toolbar-button">
-            <i class="ion-navicon" style="font-size:32px;"></i>
-          </span>
-        </div>
+    <ons-toolbar class="toolbar" id="top-toolbar">
+      <div class="toolbar__left">
+        <span class="toolbar-button">
+          <i class="ion-navicon" style="font-size:32px;"></i>
+        </span>
+      </div>
 
-        <div class="toolbar__center">
-          マップ
-        </div>
+      <div class="toolbar__center">
+        マップ
+      </div>
 
-        <div class="toolbar__right">
-          <span class="toolbar-button" onclick="refreshView()">
-            <ons-icon icon="refresh"></ons-icon>
-          </span>
-        </div>
+      <div class="toolbar__right">
+        <span class="toolbar-button" onclick="refreshView()">
+          <ons-icon icon="refresh"></ons-icon>
+        </span>
+      </div>
     </ons-toolbar>
 
 
@@ -59,9 +59,9 @@
     <ons-page id="Maps">
       <!-- <div class="progress-bar progress-bar--indeterminate">
           </div> -->
-        <ons-search-input class="search-input-map" placeholder="Search"
-          onchange="ons.notification.alert('Searched for: ' + this.value)">
-        </ons-search-input>
+      <ons-search-input class="search-input-map" placeholder="Search"
+        onchange="ons.notification.alert('Searched for: ' + this.value)">
+      </ons-search-input>
       <div id="map"></div>
       <ons-speed-dial position="bottom left" direction="up">
         <ons-fab>
@@ -84,12 +84,13 @@
     <ons-page id="List">
       <!-- <div class="progress-bar progress-bar--indeterminate">
                 </div> -->
-  <ons-search-input class="search-input-list" placeholder=" Search"
-    onchange="ons.notification.alert('Searched for: ' + this.value)">
-  </ons-search-input>
+      <ons-search-input class="search-input-list" placeholder=" Search"
+        onchange="ons.notification.alert('Searched for: ' + this.value)">
+      </ons-search-input>
       <ons-list-header>リスト</ons-list-header>
-          <ons-lazy-repeat id="infinite-list"></ons-lazy-repeat>
-
+      <ons-list>
+        <ons-lazy-repeat id="infinite-list"></ons-lazy-repeat>
+      </ons-list>
     </ons-page>
   </ons-template>
 
