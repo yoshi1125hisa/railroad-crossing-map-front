@@ -11,7 +11,7 @@ if (ons.platform.isIPhoneX()) { // iPhone X であるか否かを判定
 
 ons.ready(function () {
   console.log('Onsen UI is ready!')
-  showTemplateDialog()
+  // showTemplateDialog()
 })
 
 document.addEventListener('prechange', function (event) {

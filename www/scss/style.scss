@@ -76,10 +76,16 @@ p {
     &-map {
         position: absolute;
         z-index: 1;
-        top: 60px;
+        top: 40px;
         width: 90%;
         margin: 0 5%;
         opacity: 0.6;
+
+        @media (min-width: 768px) {
+            top: 30px;
+            width: 70%;
+            margin: 0 15%;
+        }
     }
 
     &-list {
@@ -91,11 +97,12 @@ p {
 .gm {
     // Full display is not allowed
     &-control-active,
-    &-fullscreen-control {
+    &-fullscreen-control,
+    // 地形図、航空
+    &noprint {
         display: none;
     }
 }
-
 
 // Top progress bar
 .progress-bar {
