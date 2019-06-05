@@ -3,6 +3,14 @@ body {
     overscroll-behavior: none;
 }
 
+// for iPhone X landscape mode
+// @media screen and (orientation: landscape) {
+//     ons-page {
+//         padding-left: 44px;
+//         padding-right: 44px;
+//     }
+// }
+
 #top-toolbar {
     position: fixed;
     top: 0px;
@@ -29,6 +37,8 @@ p {
     margin: 0;
     padding: 0;
     max-width: none;
+    -webkit-overflow-scrolling: touch;
+    overflow: scroll;
 }
 
 // .gm-svpc {
@@ -43,7 +53,6 @@ p {
 // ルビ
 [data-ruby] {
     position: relative;
-
     &::before {
         content: attr(data-ruby);
         position: absolute;
@@ -101,6 +110,10 @@ p {
     // 地形図、航空
     &noprint {
         display: none;
+    }
+    &-style,
+    &-iw{
+        font-size: 11px;
     }
 }
 
