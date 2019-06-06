@@ -21,39 +21,37 @@
 </head>
 
 <body>
-  <ons-navigator swipeable id="Navigator"></ons-navigator>
-  <ons-page>
+  <ons-navigator swipeable id="Navigator" page="main.html"></ons-navigator>
+  <ons-template id="main.html">
+    <ons-page>
+      <ons-toolbar class="toolbar" id="top-toolbar">
+        <div class="toolbar__left">
+          <span class="toolbar-button">
+            <i class="ion-navicon" style="font-size:32px;"></i>
+          </span>
+        </div>
 
+        <div class="toolbar__center">
+          マップ
+        </div>
 
-    <ons-toolbar class="toolbar" id="top-toolbar">
-      <div class="toolbar__left">
-        <span class="toolbar-button">
-          <i class="ion-navicon" style="font-size:32px;"></i>
-        </span>
-      </div>
+        <div class="toolbar__right">
+          <span class="toolbar-button" onclick="refreshView()">
+            <ons-icon icon="refresh"></ons-icon>
+          </span>
+        </div>
+      </ons-toolbar>
 
-      <div class="toolbar__center">
-        マップ
-      </div>
-
-      <div class="toolbar__right">
-        <span class="toolbar-button" onclick="refreshView()">
-          <ons-icon icon="refresh"></ons-icon>
-        </span>
-      </div>
-    </ons-toolbar>
-
-
-    <ons-tabbar position="bottom">
-      <ons-tab page="maps.html" label="マップ" icon="ion-map" active>
-      </ons-tab>
-      <ons-tab page="list.html" label="リスト" icon="ion-ios-list-outline">
-      </ons-tab>
-      <ons-tab page="setting.html" label="設定" icon="ion-ios-settings">
-      </ons-tab>
-    </ons-tabbar>
-  </ons-page>
-  </ons-navigator>
+      <ons-tabbar position="bottom">
+        <ons-tab page="maps.html" label="マップ" icon="ion-map" active>
+        </ons-tab>
+        <ons-tab page="list.html" label="リスト" icon="ion-ios-list-outline">
+        </ons-tab>
+        <ons-tab page="setting.html" label="設定" icon="ion-ios-settings">
+        </ons-tab>
+      </ons-tabbar>
+    </ons-page>
+  </ons-template>
 
   <ons-template id="maps.html">
     <ons-page id="Maps">

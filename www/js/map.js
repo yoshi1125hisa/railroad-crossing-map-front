@@ -487,7 +487,6 @@ let showLoadingDialog = function () {
 // Ajex通信用の関数/
 
 function get(REQUEST_URL) {
-
   return new Promise(function (resolve) {
     // ダイアログ表示
     // showLoadingDialog();
