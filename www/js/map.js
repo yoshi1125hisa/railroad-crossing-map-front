@@ -1,3 +1,27 @@
+ons.ready(function () {
+    //infinite-listを取得
+    var infiniteList = document.getElementById('infinite-list');
+
+    infiniteList.delegate = {
+        //repeatさせたいリストを作成 ※iはcountItemsでのデータ数
+        createItemContent: function (i) {
+            //dataは関数に渡したい値をいれてください
+            return ons.createElement('<ons-list-item data="' + i + ' onclick="showIndex(' + i + ')" tappable">Item ' + i + '</ons-list-item>');
+        },
+        countItems: function () {
+            //データ数
+            return 10000;
+        }
+    };
+
+    infiniteList.refresh();
+});
+
+function showIndex(index) {
+    ons.notification.alert(index + '　がタップされました');
+}
+
+
 let infoWindow = []
 
 const REQUEST_URL = "https://api.rc-map.com/v1/all.json"
