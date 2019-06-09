@@ -45,8 +45,15 @@
         "scss": "node-sass --watch --include-path scss www/scss -o www/css --output-style compressed",
         "prefix": "postcss --use autoprefixer --no-map www/css -d www/css",
         "test": "npm-run-all -p dev scss prefix",
-        "gulp": "gulp browserify"
+        "gulp": "gulp browserify",
+        "uncss": "grunt default"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/yoshi1125hisa/rc-map_front.git"
+    },
+    "author": "yoshi1125hisa",
+    "license": "UNLICENSED",
     "devDependencies": {
         "@babel/core": "7.4.5",
         "autoprefixer": "9.6.0",
@@ -63,6 +70,7 @@
         "eslint-plugin-node": "9.1.0",
         "eslint-plugin-promise": "4.1.1",
         "eslint-plugin-standard": "4.0.0",
+        "grunt": "^1.0.4",
         "gulp": "4.0.2",
         "gulp-postcss": "8.0.0",
         "html-loader": "0.5.5",
