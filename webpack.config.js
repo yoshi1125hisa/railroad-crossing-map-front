@@ -1,22 +1,11 @@
+const path = require('path');
+
 module.exports = {
   mode: 'development',
-  entry: __dirname + "/www/index.js",
+  entry: './www/js/main.js',
   output: {
-    path: __dirname + 'www/dist',
-    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'www/js'),
+    filename: 'main.bundle.js',
   },
-  module: {
-      rules: [{
-        test: /\.js/,
-        exclude: /node_modules/,
-        use: [{
-          loader: 'babel-loader',
-        }, ]
-      }]
-    },
-    // 以下追記箇所(2)
-    resolve: {
-      modules: [`${__dirname}/www`, 'node_modules'],
-      extensions: ['.js'],
-    }
-  }
+  devtool: 'inline-source-map',
+};
