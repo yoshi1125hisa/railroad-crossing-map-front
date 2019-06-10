@@ -8,40 +8,48 @@
   <meta http-equiv="Content-Security-Policy"
     content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
   <title>踏切マップ</title>
-  <script src="components/loader.js"></script>
-  <script src="lib/onsenui/js/onsenui.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="components/loader.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+  <!-- <link rel="stylesheet" href="components/loader.css"> -->
   <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
   <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
-  <script src="js/main.js"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js'></script>
-  <script src="js/fastclick.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js'></script>
+  <script src="js/fastclick.js"></script> -->
+<!-- <script src="components/loader.js"></script> -->
+<script src="lib/onsenui/js/onsenui.min.js"></script>
+<script src="js/main.js"></script>
 </head>
 
 <body>
-  <ons-navigator swipeable id="Navigator" page="main.html"></ons-navigator>
-  <ons-template id="main.html">
+<ons-navigator id="appNavigator" swipeable swipe-target-width="80px">
     <ons-page>
-      <ons-toolbar class="toolbar" id="top-toolbar">
-        <div class="toolbar__left">
-          <span class="toolbar-button">
-            <i class="ion-navicon" style="font-size:32px;"></i>
-          </span>
-        </div>
+          <ons-splitter id="appSplitter">
+            <ons-splitter-side id="sidemenu" page="sidemenu.html" swipeable side="left" collapse="" width="260px">
+            </ons-splitter-side>
+            <ons-splitter-content page="tabbar.html"></ons-splitter-content>
+          </ons-splitter>
+    </ons-page>
+</ons-navigator>
 
-        <div class="toolbar__center">
-          マップ
-        </div>
+<ons-template id="tabbar.html">
+  <ons-page id="tabbar-page">
+     <ons-toolbar class="toolbar" id="top-toolbar">
+       <div class="toolbar__left">
+         <ons-toolbar-button onclick="fn.toggleMenu()">
+           <ons-icon icon="md-menu"></ons-icon>
+         </ons-toolbar-button>
+       </div>
 
-        <div class="toolbar__right">
-          <span class="toolbar-button" onclick="refreshView()">
-            <ons-icon icon="refresh"></ons-icon>
-          </span>
-        </div>
-      </ons-toolbar>
+       <div class="toolbar__center">
+         マップ
+       </div>
 
+       <div class="toolbar__right">
+         <span class="toolbar-button" onclick="refreshView()">
+           <ons-icon icon="refresh"></ons-icon>
+         </span>
+       </div>
+     </ons-toolbar>
       <ons-tabbar position="bottom">
         <ons-tab page="maps.html" label="マップ" icon="ion-map" active>
         </ons-tab>
@@ -50,8 +58,109 @@
         <ons-tab page="setting.html" label="設定" icon="ion-ios-settings">
         </ons-tab>
       </ons-tabbar>
-    </ons-page>
-  </ons-template>
+
+    <script>
+      ons.getScriptPage().addEventListener('prechange', function (event) {
+        if (event.target.matches('#appTabbar')) {
+          event.currentTarget.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute('label');
+        }
+      });
+    </script>
+  </ons-page>
+</ons-template>
+
+<ons-template id="sidemenu.html">
+  <ons-page>
+    <div class="profile-pic">
+      <img src="https://monaca.io/img/logos/download_image_onsenui_01.png">
+    </div>
+
+    <ons-list-title>Access</ons-list-title>
+    <ons-list>
+      <ons-list-item onclick="fn.loadView(0)">
+        <div class="left">
+          <ons-icon fixed-width class="list-item__icon" icon="ion-home, material:md-home"></ons-icon>
+        </div>
+        <div class="center">
+          Home
+        </div>
+        <div class="right">
+          <ons-icon icon="fa-link"></ons-icon>
+        </div>
+      </ons-list-item>
+      <ons-list-item onclick="fn.loadView(1)">
+        <div class="left">
+          <ons-icon fixed-width class="list-item__icon" icon="ion-edit, material:md-edit"></ons-icon>
+        </div>
+        <div class="center">
+          Forms
+        </div>
+        <div class="right">
+          <ons-icon icon="fa-link"></ons-icon>
+        </div>
+      </ons-list-item>
+      <ons-list-item onclick="fn.loadView(2)">
+        <div class="left">
+          <ons-icon fixed-width class="list-item__icon" icon="md-movie-alt"></ons-icon>
+        </div>
+        <div class="center">
+          Animations
+        </div>
+        <div class="right">
+          <ons-icon icon="fa-link"></ons-icon>
+        </div>
+      </ons-list-item>
+    </ons-list>
+
+    <ons-list-title style="margin-top: 10px">Links</ons-list-title>
+    <ons-list>
+      <ons-list-item onclick="fn.loadLink('https://onsen.io/v2/docs/guide/js/')">
+        <div class="left">
+          <ons-icon fixed-width class="list-item__icon" icon="ion-document-text"></ons-icon>
+        </div>
+        <div class="center">
+          Docs
+        </div>
+        <div class="right">
+          <ons-icon icon="fa-external-link"></ons-icon>
+        </div>
+      </ons-list-item>
+      <ons-list-item onclick="fn.loadLink('https://github.com/OnsenUI/OnsenUI')">
+        <div class="left">
+          <ons-icon fixed-width class="list-item__icon" icon="ion-social-github"></ons-icon>
+        </div>
+        <div class="center">
+          GitHub
+        </div>
+        <div class="right">
+          <ons-icon icon="fa-external-link"></ons-icon>
+        </div>
+      </ons-list-item>
+      <ons-list-item onclick="fn.loadLink('https://community.onsen.io/')">
+        <div class="left">
+          <ons-icon fixed-width class="list-item__icon" icon="ion-chatboxes"></ons-icon>
+        </div>
+        <div class="center">
+          Forum
+        </div>
+        <div class="right">
+          <ons-icon icon="fa-external-link"></ons-icon>
+        </div>
+      </ons-list-item>
+      <ons-list-item onclick="fn.loadLink('https://twitter.com/Onsen_UI')">
+        <div class="left">
+          <ons-icon fixed-width class="list-item__icon" icon="ion-social-twitter"></ons-icon>
+        </div>
+        <div class="center">
+          Twitter
+        </div>
+        <div class="right">
+          <ons-icon icon="fa-external-link"></ons-icon>
+        </div>
+      </ons-list-item>
+    </ons-list>
+ </ons-page>
+</ons-template>
 
   <ons-template id="maps.html">
     <ons-page id="Maps">
@@ -87,8 +196,24 @@
       </ons-search-input>
       <ons-list-header>リスト</ons-list-header>
       <ons-list>
-        <ons-lazy-repeat id="infinite-list" ></ons-lazy-repeat>
+         <ons-lazy-repeat id="infinite-list"></ons-lazy-repeat>
       </ons-list>
+<script>
+  ons.getScriptPage().onInit = function () {
+    var infiniteList = document.getElementById('infinite-list');
+
+    infiniteList.delegate = {
+      createItemContent: function (i) {
+        return ons.createElement(`<ons-list-item>Item #${i}</ons-list-item>`);
+      },
+      countItems: function () {
+        return 3000;
+      }
+    };
+
+    infiniteList.refresh();
+  }
+</script>
     </ons-page>
   </ons-template>
 
@@ -162,6 +287,7 @@
     </ons-dialog>
   </ons-template>
 
+  <script src="js/fn.js"></script>
   <script src="js/map.js"></script>
   <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
   </script>

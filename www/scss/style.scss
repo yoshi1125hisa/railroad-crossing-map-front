@@ -53,6 +53,7 @@ p {
 // ルビ
 [data-ruby] {
     position: relative;
+
     &::before {
         content: attr(data-ruby);
         position: absolute;
@@ -104,6 +105,7 @@ p {
 }
 
 .gm {
+
     // Full display is not allowed
     &-control-active,
     &-fullscreen-control,
@@ -111,8 +113,9 @@ p {
     &noprint {
         display: none;
     }
+
     &-style,
-    &-iw{
+    &-iw {
         font-size: 11px;
     }
 }
@@ -125,4 +128,22 @@ p {
         width: 100%;
         z-index: 1;
     }
+}
+
+
+.profile-pic {
+    width: 200px;
+    background-color: #fff;
+    margin: 20px auto 10px;
+    border: 1px solid #999;
+    border-radius: 4px;
+}
+
+.profile-pic>img {
+    display: block;
+    max-width: 100%;
+}
+
+ons-list-item {
+    color: #444;
 }
