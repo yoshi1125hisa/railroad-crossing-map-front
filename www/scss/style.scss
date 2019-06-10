@@ -82,6 +82,7 @@ p {
 }
 
 .search-input {
+    cursor: pointer;
 
     &-map {
         position: absolute;
@@ -146,4 +147,11 @@ p {
 
 ons-list-item {
     color: #444;
+}
+
+ons-button,
+ons-speed-dial,
+ons-speed-dial-item,
+button {
+    cursor: pointer;
 }
