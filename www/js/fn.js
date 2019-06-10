@@ -5,7 +5,7 @@ window.fn.toggleMenu = function () {
 };
 
 window.fn.loadView = function (index) {
-    document.getElementById('appTabbar').setActiveTab(index);
+    // document.getElementById('appTabbar').setActiveTab(index);
     document.getElementById('sidemenu').close();
 };
 
