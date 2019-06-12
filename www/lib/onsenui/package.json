@@ -147,7 +147,7 @@
     "rollup-plugin-node-resolve": "5.0.1",
     "rollup-plugin-progress": "1.1.1",
     "rollup-plugin-string": "3.0.0",
-    "rollup-plugin-visualizer": "1.1.1",
+    "rollup-plugin-visualizer": "2.0.0",
     "run-sequence": "2.2.1",
     "typescript": "3.5.1",
     "uglify-js": "3.6.0",
