@@ -2499,6 +2499,10 @@ function initMap() {
     });
 }
 
+ons.ready(function() {
+    initMap();
+});
+
 // 現在地取得処理
 function getPosition() {
     // 現在地を取得
