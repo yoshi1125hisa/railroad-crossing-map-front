@@ -3,8 +3,7 @@ let infoWindow = []
 const REQUEST_URL = "https://api.rc-map.com/v1/all.json"
 
 // マーカーを立てる場所名・緯度・経度
-let locations = [
-    {
+let locations = [{
         "rc_kana": "ひおかだいに",
         "rc_name": "日岡第二",
         "rc_address": "兵庫県加古川市加古川町中津字樋掛388-2",
@@ -2457,8 +2456,8 @@ function initMap() {
         elementType: 'labels',
         stylers: [{
             visibility: 'off'
-    }]
-  }];
+        }]
+    }];
     const mapType = new google.maps.StyledMapType(styleOptions);
     map.mapTypes.set('noText', mapType);
     map.setMapTypeId('noText');
@@ -2498,10 +2497,6 @@ function initMap() {
         imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
     });
 }
-
-ons.ready(function() {
-    initMap();
-});
 
 // 現在地取得処理
 function getPosition() {
@@ -2567,7 +2562,7 @@ let showLoadingDialog = function () {
 
 // Ajex通信用の関数/
 function get(REQUEST_URL) {
-    return new Promise(function (resolve) {
+    return new Promise(function (resolve,reject) {
         // ダイアログ表示
         // showLoadingDialog();
         let xhr = new XMLHttpRequest();
@@ -2579,7 +2574,7 @@ function get(REQUEST_URL) {
                 let result = xhr;
                 resolve(result.responseText);
             } else if (xhr.status !== 200) {
-                reject('エラーです！');
+                reject('Error');
             }
         }
     });
@@ -2594,6 +2589,6 @@ get(REQUEST_URL)
     })
 
 
-const getNowLocation = function(){
+const getNowLocation = function () {
     getPosition();
 }
