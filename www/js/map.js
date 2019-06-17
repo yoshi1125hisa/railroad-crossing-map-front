@@ -2437,18 +2437,24 @@ for (let i = 0; i < locations.length; i++) {
 }
 
 let mapInfo;
+let map;
+let mapOption;
 
 function initMap() {
     // 地図の作成
     mapInfo = new google.maps.LatLng({
         lat: locations[0]['lat'],
         lng: locations[0]['lng']
-    }); // 緯度経度のデータ作成
+    }); 
+    // 緯度経度のデータ作成
 
-    map = new google.maps.Map(document.getElementById('map'), { // #mapに地図を埋め込む
-        center: mapInfo, // 地図の中心を指定
-        zoom: 11 // 地図のズームを指定
-    });
+    mapOption = {
+        center: mapInfo,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        zoom: 11
+    }
+
+    map = new google.maps.Map(document.getElementById('map'),mapOption);
 
     // Styleのオプション（名前非表示など）
     const styleOptions = [{
@@ -2561,33 +2567,32 @@ let showLoadingDialog = function () {
 // };
 
 // Ajex通信用の関数/
-function get(REQUEST_URL) {
-    return new Promise(function (resolve,reject) {
-        // ダイアログ表示
-        // showLoadingDialog();
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', REQUEST_URL);
-        xhr.withCredentials = true;
-        xhr.send(null);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                let result = xhr;
-                resolve(result.responseText);
-            } else if (xhr.status !== 200) {
-                reject('Error');
-            }
-        }
-    });
-}
+// function get(REQUEST_URL) {
+//     return new Promise(function (resolve,reject) {
+//         // ダイアログ表示
+//         // showLoadingDialog();
+//         let xhr = new XMLHttpRequest();
+//         xhr.open('GET', REQUEST_URL);
+//         xhr.withCredentials = true;
+//         xhr.send(null);
+//         xhr.onreadystatechange = function () {
+//             if (xhr.readyState === 4 && xhr.status === 200) {
+//                 let result = xhr;
+//                 resolve(result.responseText);
+//             } else if (xhr.status !== 200) {
+//                 reject('Error');
+//             }
+//         }
+//     });
+// }
 
-get(REQUEST_URL)
-    .then(function (response) {
-        console.log("Scucess!", response);
-    }, function (error) {
-        //エラー処理を記述する
-        console.error(error);
-    })
-
+// get(REQUEST_URL)
+//     .then(function (response) {
+//         console.log("Scucess!", response);
+//     }, function (error) {
+//         //エラー処理を記述する
+//         console.error(error);
+//     })
 
 const getNowLocation = function () {
     getPosition();
