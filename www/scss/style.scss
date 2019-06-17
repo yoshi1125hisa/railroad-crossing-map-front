@@ -138,20 +138,22 @@ p {
     margin: 20px auto 10px;
     border: 1px solid #999;
     border-radius: 4px;
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+
 }
 
-.profile-pic>img {
-    display: block;
-    max-width: 100%;
-}
+ons- {
+    &list-item {
+        color: #444;
+    }
 
-ons-list-item {
-    color: #444;
-}
-
-ons-button,
-ons-speed-dial,
-ons-speed-dial-item,
-button {
-    cursor: pointer;
+    &button,
+    &speed-dial,
+    &speed-dial-item{
+        cursor: pointer;
+    }
 }
