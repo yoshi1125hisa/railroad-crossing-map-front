@@ -24,7 +24,7 @@
   <ons-navigator id="appNavigator" swipe-target-width="100px">
     <ons-page>
       <ons-splitter id="appSplitter">
-        <ons-splitter-side id="sidemenu" page="sidemenu.html" side="left" collapse="" width="260px">
+        <ons-splitter-side id="sidemenu" page="setting.html" side="left" collapse="" width="260px">
         </ons-splitter-side>
         <ons-splitter-content page="tabbar.html"></ons-splitter-content>
       </ons-splitter>
@@ -46,27 +46,20 @@
 
         <div class="toolbar__right">
           <span class="toolbar-button" onclick="refreshView()">
-            <ons-icon icon="refresh"></ons-icon>
+            <ons-icon icon="refresh">
+            </ons-icon>
+
           </span>
         </div>
       </ons-toolbar>
       <ons-tabbar position="bottom">
         <ons-tab page="maps.html" label="マップ" icon="ion-map" active>
         </ons-tab>
-        <ons-tab page="list.html" label="リスト" icon="ion-ios-list-outline">
+        <ons-tab page="list.html" label="一覧" icon="ion-search">
         </ons-tab>
-        <ons-tab page="setting.html" label="設定" icon="ion-ios-settings">
-        </ons-tab>
+        <!-- <ons-tab page="setting.html" label="設定" icon="ion-ios-settings">
+        </ons-tab> -->
       </ons-tabbar>
-
-      <script>
-        ons.getScriptPage().addEventListener('prechange', function (event) {
-          if (event.target.matches('#appTabbar')) {
-            event.currentTarget.querySelector('ons-toolbar .center').innerHTML = event.tabItem.getAttribute(
-            'label');
-          }
-        });
-      </script>
     </ons-page>
   </template>
 
@@ -201,6 +194,9 @@
 
   <template id="setting.html">
     <ons-page id="Setting">
+      <div class="profile-pic">
+        <img src="https://monaca.io/img/logos/download_image_onsenui_01.png">
+      </div>
       <!-- <div class="progress-bar progress-bar--indeterminate">
                 </div> -->
       <!-- <ons-list-header>プロフィール</ons-list-header>
