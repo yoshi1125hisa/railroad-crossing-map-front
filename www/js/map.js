@@ -2481,13 +2481,40 @@ function initMap() {
     });
 
     for (let i = 0; i < locations.length; i++) {
+
+        let rcKana = locations[i]['rc_kana'];
+        let rcName = locations[i]['rc_name'];
+
+        // div要素の作成
+        let infoWindowElement = document.createElement('div');
+        // add class
+        infoWindowElement.setAttribute('class', 'map');
+
+        let rcKanaElement = document.createElement('p');
+        rcKanaElement.textContent = rcKana;
+
+        let rcNameElement = document.createElement('h1');
+        rcNameElement.textContent = rcName;
+
+        let datailButtonElement = document.createElement('ons-button');
+        datailButtonElement.setAttribute('modifier', 'quiet');
+        datailButtonElement.setAttribute('id', 'datail');
+        datailButtonElement.setAttribute('onclick', 'alert(1)');
+        datailButtonElement.textContent = '詳細を見る';
+
+        infoWindowElement.appendChild(rcKanaElement);
+        infoWindowElement.appendChild(rcNameElement);
+        infoWindowElement.appendChild(datailButtonElement);
+
+
+
         const mapContent =
             `<div class="map">
-      <p style="margin:0;padding:0;">${locations[i]['rc_kana']}</p>
-      <h1 style="margin:0;padding:0;">${locations[i]['rc_name']}</h1>
+      <p style="margin:0;padding:0;">${rcKana}</p>
+      <h1 style="margin:0;padding:0;">${rcName}</h1>
       <ons-button modifier="quiet" id="datail" style="margin:0;padding:0;" onclick="alert(1)">詳細をみる</ons-button></div>`;
         infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
-            content: mapContent // 吹き出しに表示する内容
+            content: infoWindowElement // 吹き出しに表示する内容
         });
         markerEvent(i); // マーカーにクリックイベントを追加
         function markerEvent(i) {

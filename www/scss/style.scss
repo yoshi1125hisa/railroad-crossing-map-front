@@ -3,6 +3,18 @@ body {
     overscroll-behavior: none;
 }
 
+.page__content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p {
+        margin: 0;
+        padding: 0;
+    }
+}
+
 // for iPhone X landscape mode
 // @media screen and (orientation: landscape) {
 //     ons-page {
@@ -39,6 +51,11 @@ p {
     max-width: none;
     -webkit-overflow-scrolling: touch;
     overflow: scroll;
+
+    * {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 // .gm-svpc {
@@ -110,10 +127,10 @@ p {
     // Full display is not allowed
     &-control-active,
     &-fullscreen-control,
-    &-style-mtc
-    {
+    &-style-mtc {
         display: none;
     }
+
     // 地形図、航空
     &noprint {
         display: block;
@@ -157,7 +174,7 @@ ons- {
 
     &button,
     &speed-dial,
-    &speed-dial-item{
+    &speed-dial-item {
         cursor: pointer;
     }
 }
