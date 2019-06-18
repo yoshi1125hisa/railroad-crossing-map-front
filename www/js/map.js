@@ -2537,7 +2537,8 @@ function getPosition() {
 
 // Geolocation APIに対応している
 if (navigator.geolocation) {
-    getPosition();
+    // getPosition();
+    
     // alert("この端末では位置情報が取得できます");
     // Geolocation APIに対応していない
 } else {

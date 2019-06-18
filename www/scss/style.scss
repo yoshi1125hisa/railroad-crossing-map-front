@@ -110,9 +110,13 @@ p {
     // Full display is not allowed
     &-control-active,
     &-fullscreen-control,
+    &-style-mtc
+    {
+        display: none;
+    }
     // 地形図、航空
     &noprint {
-        display: none;
+        display: block;
     }
 
     &-style,
