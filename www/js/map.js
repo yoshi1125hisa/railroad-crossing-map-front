@@ -2514,6 +2514,7 @@ function getPosition() {
             let nowLat = position.coords.latitude;
             let nowLng = position.coords.longitude;
             map.panTo(new google.maps.LatLng(nowLat, nowLng));
+            map.setZoom(13);
         },
         // 取得失敗した場合
         function (error) {
