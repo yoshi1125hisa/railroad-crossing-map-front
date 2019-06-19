@@ -48,7 +48,7 @@
   },
   "dependencies": {
     "@types/elementtree": "0.1.0",
-    "@types/findup-sync": "2.0.1",
+    "@types/findup-sync": "2.0.2",
     "@types/interpret": "1.1.1",
     "@types/ip": "1.1.0",
     "@types/node": "12.0.8",
