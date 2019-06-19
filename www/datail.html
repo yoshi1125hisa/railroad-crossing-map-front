@@ -8,15 +8,16 @@
   <meta http-equiv="Content-Security-Policy"
     content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <title>踏切マップ</title>
-    <script src="components/loader.js"></script>
-  <script src="lib/onsenui/js/onsenui.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="components/loader.css">
-  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
-  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
-  <script src="js/map.js"></script>
-  <script src="js/main.js"></script>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+<!-- <link rel="stylesheet" href="components/loader.css"> -->
+<link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+<link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+<link rel="stylesheet" href="css/style.css">
+<!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js'></script>
+  <script src="js/fastclick.js"></script> -->
+<!-- <script src="components/loader.js"></script> -->
+<script src="lib/onsenui/js/onsenui.min.js"></script>
+<script src="js/main.js"></script>
 </head>
 
 <body>
@@ -40,12 +41,16 @@
     </ons-toolbar>
 
     <ons-card>
-      <img class="rc-img" src="img/rc/tyanoki.jpg" alt="茶ノ木" style="width: 48%">
-      <h1 class="rc-name"><span data-ruby="ちゃのき">茶ノ木</span></h1>
-      <h3 class="rc-location">
+      <div id="rc-img-box">
+      <img id="rc-img" src="img/rc/tyanoki.jpg" alt="茶ノ木">
+      </div>
+
+      <h1 id="rc-name"><span data-ruby="ちゃのき">茶ノ木</span></h1>
+
+      <h4 id="rc-location">
         兵庫県姫路市網干区高田字茶の木362-1
-      </h3>
-      <hr>
+      </h4>
+      <hr id="rc-border">
       <p>詳細詳細詳細詳細詳細詳細詳細</p>
 
       <div class="content">
@@ -58,8 +63,8 @@
       </div>
     </ons-card>
   </ons-page>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js'></script>
-  <script src="js/fastclick.js"></script>
+  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js'></script>
+  <script src="js/fastclick.js"></script> -->
 </body>
 
 </html>

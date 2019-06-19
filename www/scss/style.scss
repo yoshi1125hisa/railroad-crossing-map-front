@@ -4,6 +4,7 @@ body {
 }
 
 .page__content {
+
     h1,
     h2,
     h3,
@@ -173,4 +174,20 @@ ons- {
     &speed-dial-item {
         cursor: pointer;
     }
+}
+
+#rc- {
+    &img {
+        width: 100%;
+        margin: 2% 0;
+    }
+
+    &name{
+        margin: 1% 0;
+    }
+
+    &border{
+        margin: 3% 8%;
+    }
+
 }
