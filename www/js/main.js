@@ -18,7 +18,7 @@ document.addEventListener('prechange', function (event) {
 })
 
 // 画面リロード
-let refreshView = function () {
+window.refreshView = function refreshView() {
   // trueを引数にすることで、WEBサーバーの生データを取得する。 falseではキャッシュから取得。
   location.reload(true);
   // initMap();
@@ -26,23 +26,23 @@ let refreshView = function () {
 
 // お問い合わせ画面への遷移 (Cordovaプラグインを使ってアプリ版は別ブラウザで起動できるようにする)
 // https://github.com/apache/cordova-plugin-inappbrowser （未実装）
-let contact = function () {
+window.contact = function contact() {
   window.open("https://www.yoshi1125hisa.com/");
 }
 
-let privacyPolicy = function () {
+window.privacyPolicy = function privacyPolicy() {
   window.open("https://www.yoshi1125hisa.com/");
 }
 
-let oss = function () {
+window.oss = function oss() {
   window.open("https://www.yoshi1125hisa.com/");
 }
 
-let lisence = function () {
+window.lisence = function lisence() {
   window.open("https://raw.githubusercontent.com/yoshi1125hisa/rc-map_front/develop/LICENSE");
 }
 
-let showTemplateDialog = function () {
+let showTemplateDialog = function showTemplateDialog() {
   let dialog = document.getElementById('first-dialog');
 
   if (dialog) {
@@ -57,7 +57,7 @@ let showTemplateDialog = function () {
   }
 };
 
-let hideDialog = function (id) {
+let hideDialog = function hideDialog(id) {
   document
     .getElementById(id)
     .hide();
