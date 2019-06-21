@@ -13,15 +13,26 @@ if (ons.platform.isIPhoneX()) { // iPhone X であるか否かを判定
   document.documentElement.setAttribute('onsflag-iphonex-landscape', '') // 横
 }
 
+let isMapView = true;
+
 document.addEventListener('prechange', function (event) {
+  let tabLabel = event.tabItem.getAttribute('label');
   document.querySelector('ons-toolbar .toolbar__center').innerHTML = event.tabItem.getAttribute('label');
+  console.log(tabLabel);
+  if (tabLabel != 'マップ') {
+    isMapView = false;
+  }
 })
+
 
 // 画面リロード
 window.refreshView = function refreshView() {
   // trueを引数にすることで、WEBサーバーの生データを取得する。 falseではキャッシュから取得。
-  location.reload(true);
-  // initMap();
+  if (isMapView == true) {
+    initMap();
+  } else {
+    location.reload(true);
+  }
 }
 
 // お問い合わせ画面への遷移 (Cordovaプラグインを使ってアプリ版は別ブラウザで起動できるようにする)
