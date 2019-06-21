@@ -3,6 +3,10 @@
 // Android UI (Material)に固定
 // ons.forcePlatformStyling('android');
 
+document.addEventListener('deviceready', function () {
+  navigator.splashscreen.hide();
+}, false);
+
 if (ons.platform.isIPhoneX()) { // iPhone X であるか否かを判定
   // <html> 要素に属性を追加（値として空文字列を設定）
   document.documentElement.setAttribute('onsflag-iphonex-portrait', '') // 縦
@@ -16,8 +20,8 @@ document.addEventListener('prechange', function (event) {
 // 画面リロード
 let refreshView = function () {
   // trueを引数にすることで、WEBサーバーの生データを取得する。 falseではキャッシュから取得。
-  // location.reload(true);
-  initMap();
+  location.reload(true);
+  // initMap();
 }
 
 // お問い合わせ画面への遷移 (Cordovaプラグインを使ってアプリ版は別ブラウザで起動できるようにする)
