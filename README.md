@@ -1,4 +1,22 @@
-# 踏切マップ
+# [踏切マップ](https://rc-map.netlify.com/www/index.html)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/65141ac4-fec2-4e56-8a75-a33ae31f6ad3/deploy-status)](https://app.netlify.com/sites/rc-map/deploys)
+
+
+## イメージ (Last Update: 2019/05/27)
+
+### iOS (iPhoneXsMax)
+<img src="./img/ss_iphonex_1.png" width="30%"> <img src="./img/ss_iphonex_2.png" width="30%">
+
+### Android (PixelXL2)
+<img src="./img/ss_Pixel2XL_1.png" width="30%"> <img src="./img/ss_Pixel2XL_2.png" width="30%">
+
+
+### Android (XPERIA10)
+<img src="./img/ss_xperia10_1.png" width="30%"> <img src="./img/ss_xperia10_2.png" width="30%">
+
+### ブラウザ (Chrome for Mac)
+<img src="./img/ss_pc.png" width="60%">
 
 ## 開発環境
 - Apache Cordova
@@ -19,8 +37,8 @@
 gitからcloneします。
 
 ```
-$ git clone https://github.com/yoshi1125hisa/search-railroad-crossing.git
-$ cd search-railroad-crossing
+$ git clone <THIS_REPOSITORY_URL>
+$ cd <THIS_REPOSITORY_NAME>
 ```
 
 ### ローカル
@@ -121,7 +139,7 @@ $ cordova emulate android
 権限の関係でエラーとなるため、以下のコマンドを実施してから再度、ビルド→エミュレートします。
 
 ```
-$ chmod +x /cordovaプロジェクト名/platforms/android/gradlew
+$ chmod +x /<THIS_REPOSITORY_NAME>/platforms/android/gradlew
 ```
 
 ### Docker
@@ -129,13 +147,15 @@ $ chmod +x /cordovaプロジェクト名/platforms/android/gradlew
 #### ビルド
 
 ```
-$ docker build -t railroad-crossing-map .
+$ docker build -t <THIS_APP_NAME> .
 ```
+
+`.` はカレントディレクトリを示すものです。削除しないでください。
 
 #### 実行
 
 ```
-$ docker run -it railroad-crossing-map
+$ docker run -it <THIS_APP_NAME>
 ```
 
 ## 開発手順

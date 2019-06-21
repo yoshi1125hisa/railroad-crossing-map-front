@@ -1,16 +1,46 @@
-const gulp = require("gulp");
-const postcss = require("gulp-postcss");
-const autoprefixer = require("autoprefixer");
+var gulp = require('gulp');
+var webpack = require('webpack-stream');
+var webpackConfig = require('./webpack.config.js');
+var browser = require("browser-sync");
+var concat = require('gulp-concat');
+var rename = require('gulp-rename');
 
-gulp.task("default", function () {
-  return gulp.src("www/css/style.css")
-    .pipe(postcss([
-      autoprefixer({
-        // ☆IEは11以上、Androidは4.4以上
-        // その他は最新2バージョンで必要なベンダープレフィックスを付与する設定
-        browsers: ["last 2 versions", "ie >= 11", "Android >= 4"],
-        cascade: false
-      })
-    ]))
-    .pipe(gulp.dest("www/css"));
+gulp.task('build', ['build:js']);
+
+gulp.task('build:js', function() {
+    return gulp.src(['./source/**/*.js', './bower_components/**/*.js'])
+        .pipe(webpack(webpackConfig))
+        .pipe(gulp.dest('./www/compiled/'))
+        .pipe(browser.reload({stream:true}));
+});
+
+// gulp.task('build:css', function() {
+//     return gulp.src(['./source/lib/bootstrap-material-datepicker/**/*.css', './bower_components/**/*.css'])
+//     		.pipe(concat('style.min.css'))
+//     		.pipe(gulp.dest('./www/compiled/'))
+//         .pipe(browser.reload({stream:true}));
+// });
+
+// gulp.task('fonts', function() {
+//     return gulp.src(['./bower_components/**/*.{ttf,woff,woff2}'])
+//             .pipe(rename({dirname: ''}))
+//             .pipe(gulp.dest('./www/compiled/'));
+// });
+
+gulp.task('reload:html'), function() {
+	return browser.reload({stream:true});
+}
+
+gulp.task("default",['server'], function() {
+    gulp.watch(["./www/**/*.js", "!/www/vendor/"], ["build:js"]);
+    gulp.watch(["./www/**/*.css", "!/www/vendor/"], ["build:css"]);
+    gulp.watch("./www/*.html", ["reload:html"]);
+});
+
+gulp.task("server", function() {
+    browser({
+        server: {
+            baseDir: "./www/"
+        }
+    });
 });

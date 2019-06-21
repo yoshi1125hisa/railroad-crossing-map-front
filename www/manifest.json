@@ -2,8 +2,7 @@
     "name": "踏切マップ",
     "short_name": "踏切マップ",
     "description": "踏切の場所を地図に表示するアプリ",
-    "icons": [
-        {
+    "icons": [{
             "src": "images/icons/icon-48x48.png",
             "sizes": "48x48",
             "type": "image/png"

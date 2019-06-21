@@ -1,4 +1,4 @@
-FROM node:11.0.0-alpine
+FROM node:11.15.0-alpine
 
 ARG project_dir=/app/
 
@@ -8,8 +8,8 @@ WORKDIR ${project_dir}
 RUN set -x && \
     apk upgrade --no-cache && \
     npm i -g cordova && \
-    npm install
+    npm i
 
-EXPOSE 8080 8081
+EXPOSE 8080
 
-CMD ["npm", "run", "dev"]
+CMD ["npm", "run", "start"]
