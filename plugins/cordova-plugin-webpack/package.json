@@ -80,7 +80,7 @@
     "@commitlint/cli": "8.0.0",
     "@commitlint/config-conventional": "8.0.0",
     "@commitlint/prompt-cli": "8.0.0",
-    "@typescript-eslint/eslint-plugin": "1.10.2",
+    "@typescript-eslint/eslint-plugin": "1.11.0",
     "eslint": "6.0.0",
     "eslint-config-airbnb-base": "13.1.0",
     "eslint-config-prettier": "5.0.0",
