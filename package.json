@@ -63,7 +63,7 @@
         "browserify": "16.2.3",
         "cordova": "9.0.0",
         "css-loader": "3.0.0",
-        "eslint": "5.16.0",
+        "eslint": "6.0.0",
         "eslint-config-standard": "12.0.0",
         "eslint-plugin-import": "2.17.3",
         "eslint-plugin-node": "9.1.0",
