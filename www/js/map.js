@@ -2445,7 +2445,7 @@ function initMap() {
     mapInfo = new google.maps.LatLng({
         lat: locations[0]['lat'],
         lng: locations[0]['lng']
-    }); 
+    });
     // 緯度経度のデータ作成
 
     mapOption = {
@@ -2454,7 +2454,10 @@ function initMap() {
         zoom: 11
     }
 
-    map = new google.maps.Map(document.getElementById('map'),mapOption);
+    map = new google.maps.Map(document.getElementById('map'), mapOption);
+
+    map.data.loadGeoJson("../src/N02-18_RailroadSection.geojson"); // 路線図
+    // map.data.loadGeoJson("../src/N02-18_Station.geojson"); // 駅でーた
 
     // Styleのオプション（名前非表示など）
     const styleOptions = [{
@@ -2464,6 +2467,15 @@ function initMap() {
             visibility: 'off'
         }]
     }];
+
+    map.data.setStyle(function (feature) {
+        return ({
+            strokeColor: "#0000ff",
+            strokeWeight: 2,
+            zIndex: 1
+        });
+    });
+
     const mapType = new google.maps.StyledMapType(styleOptions);
     map.mapTypes.set('noText', mapType);
     map.setMapTypeId('noText');
@@ -2566,7 +2578,7 @@ function getPosition() {
 // Geolocation APIに対応している
 if (navigator.geolocation) {
     // getPosition();
-    
+
     // alert("この端末では位置情報が取得できます");
     // Geolocation APIに対応していない
 } else {
