@@ -37,7 +37,6 @@
         ]
     },
     "scripts": {
-        "cordova": "cordova",
         "monaca:preview": "npm run dev",
         "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081",
         "scss": "node-sass --watch --include-path scss www/scss -o www/css --output-style compressed",
@@ -45,7 +44,8 @@
         "test": "npm-run-all -p dev scss prefix",
         "gulp": "gulp browserify",
         "uncss": "grunt default",
-        "webpack": "cordova build && cordova run-- --livereload"
+        "webpack": "cordova build --browserify && cordova run-- --livereload",
+        "build": "cordova build --browserify"
     },
     "repository": {
         "type": "git",

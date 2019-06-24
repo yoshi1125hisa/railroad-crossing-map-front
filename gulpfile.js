@@ -1,9 +1,9 @@
-var gulp = require('gulp');
-var webpack = require('webpack-stream');
-var webpackConfig = require('./webpack.config.js');
-var browser = require("browser-sync");
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
+const gulp = require('gulp');
+const webpack = require('webpack-stream');
+const webpackConfig = require('./webpack.config.js');
+const browser = require("browser-sync");
+const concat = require('gulp-concat');
+const rename = require('gulp-rename');
 
 gulp.task('build', ['build:js']);
 
