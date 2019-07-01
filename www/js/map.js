@@ -1,7 +1,6 @@
 let infoWindow = []
 
-// const REQUEST_URL = "https://api.rc-map.com/v1/all.json"
-// const REQUEST_URL2 = "https://rc-api.netlify.com/v1/all.json";
+const REQUEST_URL = "https://api.rc-map.com/v1/all.json"
 
 // マーカーを立てる場所名・緯度・経度
 let locations = [{
@@ -7417,9 +7416,8 @@ function getPosition() {
 // Geolocation APIに対応している
 if (navigator.geolocation) {
     // getPosition();
-
     // alert("この端末では位置情報が取得できます");
-    // Geolocation APIに対応していない
+// Geolocation APIに対応していない
 } else {
     // alert("この端末では位置情報が取得できません");
 }
@@ -7446,34 +7444,21 @@ let showLoadingDialog = function () {
 //     .hide();
 // };
 
-
-
 // Ajex通信用の関数/
-function get(REQUEST_URL) {
-    return new Promise(function (resolve,reject) {
-        // ダイアログ表示
-        // showLoadingDialog();
-        let xhr = new XMLHttpRequest();
-        xhr.open('GET', REQUEST_URL);
-        xhr.withCredentials = true;
-        xhr.send(null);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                let result = xhr;
-                resolve(result.responseText);
-            } else if (xhr.status !== 200) {
-                reject('Error');
-            }
-        }
-    });
+
+async function getMapData() {
+    return await (await fetch(REQUEST_URL)).json();
 }
 
-get(REQUEST_URL)
-    .then(function (response) {
-        console.log("Scucess!", response);
-    }, function (error) {
-        //エラー処理を記述する
-        console.error(error);
+getMapData()
+    .then(data => {
+        console.log(JSON.stringify(data));
+        pinLocation = JSON.stringify(data);
+
+        // 地図のデータを読み込む処理
+
+    }).catch(err => {
+        console.log(err);
     })
 
 const getNowLocation = function getNowLocation() {
