@@ -7,6 +7,7 @@ module.exports = {
     'fn': './www/js/fn.js',
     'map': './www/js/map.js',
     'fastclick': './www/js/fastclick.js',
+    'license': './www/js/license.js'
   },
   output: {
     path: path.resolve(__dirname, 'www/js/bundle'),
