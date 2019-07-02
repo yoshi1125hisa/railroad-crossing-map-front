@@ -116,7 +116,7 @@
     "gulp-hub": "4.2.0",
     "gulp-if": "2.0.2",
     "gulp-insert": "0.5.0",
-    "gulp-load-plugins": "1.6.0",
+    "gulp-load-plugins": "2.0.0",
     "gulp-protractor": "4.1.1",
     "gulp-rename": "1.4.0",
     "gulp-replace": "1.0.0",
