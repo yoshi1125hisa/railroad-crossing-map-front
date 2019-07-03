@@ -73,3 +73,4 @@ let hideDialog = function hideDialog(id) {
     .getElementById(id)
     .hide();
 };
+

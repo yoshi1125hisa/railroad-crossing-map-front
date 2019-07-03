@@ -1,4 +1,4 @@
-import licenseList from "license-list;
+import licenseList from "license-list";
 
 licenseList('.', {
   dev: false

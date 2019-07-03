@@ -7303,7 +7303,7 @@ function initMap() {
 
     map = new google.maps.Map(document.getElementById('map'), mapOption);
 
-    map.data.loadGeoJson("../../src/N02-18_RailroadSection.geojson"); // 路線図
+    // map.data.loadGeoJson("../../src/N02-18_RailroadSection.geojson"); // 路線図
     // map.data.loadGeoJson("../src/N02-18_Station.geojson"); // 駅でーた
 
     // Styleのオプション（名前非表示など）
@@ -7466,3 +7466,4 @@ getMapData()
 const getNowLocation = function getNowLocation() {
     getPosition();
 }
+
