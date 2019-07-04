@@ -191,7 +191,20 @@
     </ons-list>
 
     <script>
+      ons.getScriptPage().onInit = function () {
+        var infiniteList = document.getElementById('infinite-list');
 
+        infiniteList.delegate = {
+          createItemContent: function (i) {
+            return ons.createElement(`<ons-list-item>Item #${i}</ons-list-item>`);
+          },
+          countItems: function () {
+            return 3000;
+          }
+        };
+
+        infiniteList.refresh();
+      }
     </script>
     </ons-page>
   </template>
@@ -275,6 +288,6 @@
     async defer></script>
   <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
   </script>
-  <script type="module" src="js/license.js"></script>
+  <!-- <script type="module" src="js/license.js"></script> -->
 </body>
 </html>

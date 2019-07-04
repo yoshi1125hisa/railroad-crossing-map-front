@@ -7455,8 +7455,7 @@ async function getMapData() {
 getMapData()
     .then(data => {
         console.log(JSON.stringify(data));
-        const pinLocation = JSON.stringify(data);
-
+        // const pinLocation = JSON.stringify(data);
         // 地図のデータを読み込む処理
 
     }).catch(err => {

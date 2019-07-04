@@ -18,7 +18,8 @@ let isMapView = true;
 document.addEventListener('prechange', function (event) {
   let tabLabel = event.tabItem.getAttribute('label');
   document.querySelector('ons-toolbar .toolbar__center').innerHTML = event.tabItem.getAttribute('label');
-  console.log(tabLabel);
+  // タブラベルの検知
+  // console.log(tabLabel);
   if (tabLabel != 'マップ') {
     isMapView = false;
   }
