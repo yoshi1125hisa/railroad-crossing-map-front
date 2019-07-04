@@ -7329,7 +7329,10 @@ function initMap() {
 
     const markers = locations.map(function (locations, i) {
         return new google.maps.Marker({
+            // map: map,
+            // マーカークラスタ使用時は削除
             position: locations,
+            animation: google.maps.Animation.DROP,
             // ラベルの表示(今回はInfoWindowがあるためなしでもOK？)
             // label: locations.rc_name,
             icon: {
@@ -7457,7 +7460,6 @@ getMapData()
         console.log(JSON.stringify(data));
         // const pinLocation = JSON.stringify(data);
         // 地図のデータを読み込む処理
-
     }).catch(err => {
         console.log(err);
     })
