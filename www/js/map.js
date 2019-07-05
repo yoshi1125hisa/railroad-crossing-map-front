@@ -1,5 +1,3 @@
-
-
 let infoWindow = []
 
 const REQUEST_URL = "https://api.rc-map.com/v1/all.json"
@@ -7283,64 +7281,70 @@ let locations = [{
 //     locations[i].lng = parseFloat(locations[i].lng, 10);
 // }
 
-let mapInfo;
 let map;
-let mapOption;
+// Styleのオプション（名前非表示など）
+const styleOptions = [{
+    featureType: 'all',
+    elementType: 'labels',
+    stylers: [{
+        visibility: 'off'
+    }]
+}];
+
+let markers;
+let bounds;
 
 function initMap() {
     // 地図の作成
-    mapInfo = new google.maps.LatLng({
+    let mapInfo = new google.maps.LatLng({
         lat: locations[0]['lat'],
         lng: locations[0]['lng']
     });
-    // 緯度経度のデータ作成
 
-    mapOption = {
+    let mapOption = {
         center: mapInfo,
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         zoom: 11
     }
 
+    // 緯度経度のデータ作成
     map = new google.maps.Map(document.getElementById('map'), mapOption);
 
     // map.data.loadGeoJson("../../src/N02-18_RailroadSection.geojson"); // 路線図
     // map.data.loadGeoJson("../src/N02-18_Station.geojson"); // 駅でーた
-
-    // Styleのオプション（名前非表示など）
-    const styleOptions = [{
-        featureType: 'all',
-        elementType: 'labels',
-        stylers: [{
-            visibility: 'off'
-        }]
-    }];
-
-    map.data.setStyle(function (feature) {
-        return ({
-            strokeColor: "#0000ff",
-            strokeWeight: 2,
-            zIndex: 1
-        });
-    });
+    // map.data.setStyle(function (feature) {
+    //     return ({
+    //         strokeColor: "#0000ff",
+    //         strokeWeight: 2,
+    //         zIndex: 1
+    //     });
+    // });
 
     const mapType = new google.maps.StyledMapType(styleOptions);
     map.mapTypes.set('noText', mapType);
     map.setMapTypeId('noText');
 
-    const markers = locations.map(function (locations, i) {
-        return new google.maps.Marker({
-            // map: map,
-            // マーカークラスタ使用時は削除
-            position: locations,
-            animation: google.maps.Animation.DROP,
-            // ラベルの表示(今回はInfoWindowがあるためなしでもOK？)
-            // label: locations.rc_name,
-            icon: {
-                url: 'img/icon/humikiri.svg',
-                scaledSize: new google.maps.Size(48, 48)
-            }
+    // fetch(REQUEST_URL)
+    //     .then(function (response) {
+    //         return response.json()
+    //     })
+    //     .then(plotMarkers);
+
+    markers = locations.map(
+        function (locations, i) {
+            return new google.maps.Marker({
+                // map: map,
+                // マーカークラスタ使用時は削除
+                position: locations,
+                animation: google.maps.Animation.DROP,
+                // ラベルの表示(今回はInfoWindowがあるためなしでもOK？)
+                // label: locations.rc_name,
+                icon: {
+                    url: 'img/icon/humikiri.svg',
+                    scaledSize: new google.maps.Size(48, 48)
+                }
+            });
         });
-    });
 
     for (let i = 0; i < locations.length; i++) {
 
@@ -7422,7 +7426,7 @@ function getPosition() {
 if (navigator.geolocation) {
     // getPosition();
     // alert("この端末では位置情報が取得できます");
-// Geolocation APIに対応していない
+    // Geolocation APIに対応していない
 } else {
     // alert("この端末では位置情報が取得できません");
 }
@@ -7467,4 +7471,3 @@ getMapData()
 const getNowLocation = function getNowLocation() {
     getPosition();
 }
-
