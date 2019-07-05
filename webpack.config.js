@@ -6,8 +6,7 @@ module.exports = {
     'main': './www/js/main.js',
     'fn': './www/js/fn.js',
     'map': './www/js/map.js',
-    'fastclick': './www/js/fastclick.js',
-    'license': './www/js/license.js'
+    'fastclick': './www/js/fastclick.js'
   },
   output: {
     path: path.resolve(__dirname, 'www/js/bundle'),
