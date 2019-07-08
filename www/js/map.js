@@ -7324,11 +7324,14 @@ function initMap() {
     map.mapTypes.set('noText', mapType);
     map.setMapTypeId('noText');
 
-    // fetch(REQUEST_URL)
-    //     .then(function (response) {
-    //         return response.json()
-    //     })
-    //     .then(plotMarkers);
+    fetch(REQUEST_URL)
+    .then(function (response) {
+        response.json().then(function (data) {
+            console.log(data);
+        });
+    }).catch(function (error) {
+        console.log('Fetch Error:', error);
+    });
 
     markers = locations.map(
         function (locations, i) {
@@ -7424,7 +7427,7 @@ function getPosition() {
 
 // Geolocation APIに対応している
 if (navigator.geolocation) {
-    // getPosition();
+    getPosition();
     // alert("この端末では位置情報が取得できます");
     // Geolocation APIに対応していない
 } else {
@@ -7447,26 +7450,26 @@ let showLoadingDialog = function () {
     }
 };
 
-// let hideLoadingDialog = function (id) {
-//   document
-//     .getElementById(id)
-//     .hide();
-// };
+let hideLoadingDialog = function (id) {
+    document
+        .getElementById(id)
+        .hide();
+};
 
 // Ajex通信用の関数/
 
-async function getMapData() {
-    return await (await fetch(REQUEST_URL)).json();
-}
+// async function getMapData() {
+//     return await (await fetch(REQUEST_URL)).json();
+// }
 
-getMapData()
-    .then(data => {
-        console.log(JSON.stringify(data));
-        // const pinLocation = JSON.stringify(data);
-        // 地図のデータを読み込む処理
-    }).catch(err => {
-        console.log(err);
-    })
+// getMapData()
+//     .then(data => {
+//         console.log(JSON.stringify(data));
+//         // const pinLocation = JSON.stringify(data);
+//         // 地図のデータを読み込む処理
+//     }).catch(err => {
+//         console.log(err);
+//     })
 
 const getNowLocation = function getNowLocation() {
     getPosition();
