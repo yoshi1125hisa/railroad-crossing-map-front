@@ -51,7 +51,7 @@
     "@types/findup-sync": "2.0.2",
     "@types/interpret": "1.1.1",
     "@types/ip": "1.1.0",
-    "@types/node": "12.0.12",
+    "@types/node": "12.6.2",
     "@types/react-dev-utils": "9.0.1",
     "@types/rechoir": "0.6.1",
     "@types/webpack": "4.4.34",
@@ -69,7 +69,7 @@
     "react-dev-utils": "9.0.1",
     "rechoir": "0.7.0",
     "source-map-support": "0.5.12",
-    "webpack": "4.35.2",
+    "webpack": "4.35.3",
     "webpack-dev-server": "3.7.2",
     "webpack-inject-plugin": "1.5.2",
     "yargs-parser": "13.1.1"
@@ -92,7 +92,7 @@
     "prettier": "1.18.2",
     "rimraf": "2.6.3",
     "ts-loader": "6.0.4",
-    "typescript": "3.5.2",
+    "typescript": "3.5.3",
     "webpack-cli": "3.3.5"
   },
   "homepage": "https://github.com/kotarella1110/cordova-plugin-webpack#readme",
