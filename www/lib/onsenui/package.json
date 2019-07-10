@@ -138,7 +138,7 @@
     "mkpath": "1.0.0",
     "mocha": "6.1.4",
     "protractor": "5.4.2",
-    "rollup": "1.16.6",
+    "rollup": "1.16.7",
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-commonjs": "10.0.1",
     "rollup-plugin-eslint": "7.0.0",
@@ -149,11 +149,11 @@
     "rollup-plugin-string": "3.0.0",
     "rollup-plugin-visualizer": "2.4.4",
     "run-sequence": "2.2.1",
-    "typescript": "3.5.2",
+    "typescript": "3.5.3",
     "uglify-js": "3.6.0",
     "wcdoc": "0.1.19",
     "wdio-jasmine-framework": "0.3.8",
-    "webdriverio": "5.10.10",
+    "webdriverio": "5.11.0",
     "webpack-stream": "5.2.1"
   },
   "dependencies": {
