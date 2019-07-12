@@ -153,7 +153,7 @@
     "uglify-js": "3.6.0",
     "wcdoc": "0.1.19",
     "wdio-jasmine-framework": "0.3.8",
-    "webdriverio": "5.11.1",
+    "webdriverio": "5.11.2",
     "webpack-stream": "5.2.1"
   },
   "dependencies": {
