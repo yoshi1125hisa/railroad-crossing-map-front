@@ -62,7 +62,7 @@
     "current-device": "0.8.1",
     "elementtree": "0.1.7",
     "express": "4.17.1",
-    "findup-sync": "3.0.0",
+    "findup-sync": "4.0.0",
     "glob": "7.1.4",
     "interpret": "1.2.0",
     "ip": "1.1.5",
