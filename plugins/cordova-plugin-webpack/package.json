@@ -93,7 +93,7 @@
     "rimraf": "2.6.3",
     "ts-loader": "6.0.4",
     "typescript": "3.5.3",
-    "webpack-cli": "3.3.5"
+    "webpack-cli": "3.3.6"
   },
   "homepage": "https://github.com/kotarella1110/cordova-plugin-webpack#readme",
   "husky": {
