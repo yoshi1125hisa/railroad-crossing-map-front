@@ -1,5 +1,5 @@
 ---
-name: dvelopment task
+name: development task
 about: 開発中における必要な事項はこのテンプレートを使用してください。
 title: ''
 labels: development
