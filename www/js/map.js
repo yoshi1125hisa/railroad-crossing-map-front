@@ -94,15 +94,19 @@ function initMap() {
             let nameElement = document.createElement('h1');
             nameElement.textContent = name;
 
-            let datailButtonElement = document.createElement('ons-button');
-            datailButtonElement.setAttribute('modifier', 'quiet');
-            datailButtonElement.setAttribute('id', 'datail');
-            datailButtonElement.setAttribute('onclick', 'alert(1)');
-            datailButtonElement.textContent = '詳細を見る';
+            let goingButtonElement = document.createElement('ons-button');
+            goingButtonElement.setAttribute('modifier', 'quiet');
+            goingButtonElement.setAttribute('id', 'going');
+
+            let goingUrl = "https://maps.google.co.jp/maps?q=" + locations[i]['lat'] + "," + locations[i]['lng'] + "&z=15";
+            // goingButtonElement.setAttribute('onclick', 'window.location.href = goingUrl');
+            goingButtonElement.onclick = "window.open( goingUrl, '_system')";
+            goingButtonElement.textContent = '詳細を見る';
+
 
             infoWindowElement.appendChild(kanaElement);
             infoWindowElement.appendChild(nameElement);
-            infoWindowElement.appendChild(datailButtonElement);
+            infoWindowElement.appendChild(goingButtonElement);
 
             infoWindow[i] = new google.maps.InfoWindow({ // 吹き出しの追加
                 content: infoWindowElement // 吹き出しに表示する内容
@@ -129,7 +133,8 @@ function initMap() {
             // alert("この端末では位置情報が取得できません");
         }
     }).catch(function (e) {
-        console.log(e);
+        alert(e)
+        //console.log(e);
     });
 }
 
@@ -158,7 +163,7 @@ function getPosition() {
                     alert("タイムアウトになりました");
                     break;
                 default:
-                    alert("その他のエラー(エラーコード:" + error.code + ")");
+                    alert("その他のエラー(エラー:" + error);
                     break;
             }
         }
@@ -173,8 +178,8 @@ let showLoadingDialog = function () {
         loadingDialog.show();
     } else {
         ons.createElement('loading-dialog.html', {
-            append: true
-        })
+                append: true
+            })
             .then(function (loadingDialog) {
                 loadingDialog.show();
             });
@@ -186,21 +191,6 @@ let hideLoadingDialog = function (id) {
         .getElementById(id)
         .hide();
 };
-
-// Ajex通信用の関数/
-
-// async function getMapData() {
-//     return await (await fetch(REQUEST_URL)).json();
-// }
-
-// getMapData()
-//     .then(data => {
-//         console.log(JSON.stringify(data));
-//         // const pinLocation = JSON.stringify(data);
-//         // 地図のデータを読み込む処理
-//     }).catch(err => {
-//         console.log(err);
-//     })
 
 const getNowLocation = function getNowLocation() {
     getPosition();
