@@ -99,9 +99,13 @@ function initMap() {
             goingButtonElement.setAttribute('id', 'going');
 
             let goingUrl = "https://maps.google.co.jp/maps?q=" + locations[i]['lat'] + "," + locations[i]['lng'] + "&z=15";
-            // goingButtonElement.setAttribute('onclick', 'window.location.href = goingUrl');
-            goingButtonElement.onclick = "window.open( goingUrl, '_system')";
-            goingButtonElement.textContent = '詳細を見る';
+
+            function openUrl() {
+                window.open(goingUrl, '_system')
+            }
+
+            goingButtonElement.onclick = openUrl;
+            goingButtonElement.textContent = 'GoogleMapで開く';
 
 
             infoWindowElement.appendChild(kanaElement);
