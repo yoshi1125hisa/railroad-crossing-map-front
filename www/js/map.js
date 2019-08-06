@@ -32,7 +32,6 @@ async function getJsonData(url) {
 }
 
 function initMap() {
-    console.log("initMap");
     getJsonData(REQUEST_URL).then(function (locations) {
         // 地図の作成
         let mapInfo = new google.maps.LatLng({
