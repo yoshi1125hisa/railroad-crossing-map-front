@@ -52,6 +52,7 @@ p {
     max-width: none;
     -webkit-overflow-scrolling: touch;
     overflow: scroll;
+    border-radius: 0;
 
     * {
         margin: 0;
@@ -182,11 +183,11 @@ ons- {
         margin: 2% 0;
     }
 
-    &name{
+    &name {
         margin: 1% 0;
     }
 
-    &border{
+    &border {
         margin: 3% 8%;
     }
 
