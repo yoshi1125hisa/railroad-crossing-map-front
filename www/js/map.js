@@ -7291,11 +7291,12 @@ const styleOptions = [{
     }]
 }];
 
+
 let markers;
 let bounds;
 
 function initMap() {
-    // 地図の作成
+    // 地図の作);成
     let mapInfo = new google.maps.LatLng({
         lat: locations[0]['lat'],
         lng: locations[0]['lng']
