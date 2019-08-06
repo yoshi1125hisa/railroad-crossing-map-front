@@ -80,8 +80,8 @@ function initMap() {
 
         for (let i = 0; i < locations.length; i++) {
 
-            let kana = locations[i]['kana'];
-            let name = locations[i]['name'];
+            let kana = locations[i]['rc_kana'];
+            let name = locations[i]['rc_name'];
 
             // div要素の作成
             let infoWindowElement = document.createElement('div');
