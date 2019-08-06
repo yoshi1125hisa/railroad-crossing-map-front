@@ -2,34 +2,6 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/65141ac4-fec2-4e56-8a75-a33ae31f6ad3/deploy-status)](https://app.netlify.com/sites/rc-map/deploys)
 
-
-## イメージ (Last Update: 2019/05/27)
-
-### iOS (iPhoneXsMax)
-<img src="./img/ss_iphonex_1.png" width="30%"> <img src="./img/ss_iphonex_2.png" width="30%">
-
-### Android (PixelXL2)
-<img src="./img/ss_Pixel2XL_1.png" width="30%"> <img src="./img/ss_Pixel2XL_2.png" width="30%">
-
-
-### Android (XPERIA10)
-<img src="./img/ss_xperia10_1.png" width="30%"> <img src="./img/ss_xperia10_2.png" width="30%">
-
-### ブラウザ (Chrome for Mac)
-<img src="./img/ss_pc.png" width="60%">
-
-## 開発環境
-- Apache Cordova
-- Onsen UI
-- HTML
-- SCSS
-- JavaScript
-
-## 対応OS
-- Android
-- iOS
-- ブラウザ(PWA)
-
 ---
 
 ## 実行方法
