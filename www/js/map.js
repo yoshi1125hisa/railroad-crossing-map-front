@@ -37,7 +37,7 @@ function initMap() {
                 locations[i].lng = parseFloat(locations[i].lng, 10);
             }
         }
-        
+
         // 地図の作成
         let mapInfo = new google.maps.LatLng({
             lat: locations[0]['lat'],
@@ -85,8 +85,8 @@ function initMap() {
 
         for (let i = 0; i < locations.length; i++) {
 
-            let kana = locations[i]['rc_kana'];
-            let name = locations[i]['rc_name'];
+            let rcKana = locations[i]['rc_kana'];
+            let rcName = locations[i]['rc_name'];
 
             // div要素の作成
             let infoWindowElement = document.createElement('div');
@@ -94,10 +94,10 @@ function initMap() {
             infoWindowElement.setAttribute('class', 'map');
 
             let kanaElement = document.createElement('p');
-            kanaElement.textContent = kana;
+            kanaElement.textContent = rcKana;
 
             let nameElement = document.createElement('h1');
-            nameElement.textContent = name;
+            nameElement.textContent = rcName;
 
             let goingButtonElement = document.createElement('ons-button');
             goingButtonElement.setAttribute('modifier', 'quiet');
