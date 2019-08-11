@@ -3,6 +3,12 @@
 // Android UI (Material)に固定
 // ons.forcePlatformStyling('android');
 
+window.addEventListener('offline', function (e) {
+  // console.log('offlineです。');
+  this.alert("端末がオフラインです。\nネットワークに接続してください。")
+});
+
+
 document.addEventListener('deviceready', function () {
   navigator.splashscreen.hide();
 }, false);
