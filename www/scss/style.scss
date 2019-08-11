@@ -60,11 +60,6 @@ p {
     }
 }
 
-// .gm-svpc {
-//     display: none;
-// }
-
-
 // ルビ
 [data-ruby] {
     position: relative;
@@ -134,9 +129,35 @@ p {
         display: block;
     }
 
+    &-svpc {
+        display: none !important;
+    }
+
     &-style,
     &-iw {
         font-size: 11px;
+
+        /* infowindowのCSS */
+        &-iw {
+            width: 250px !important;
+            top: 15px !important;
+            left: 0 !important;
+            background-color: #fff;
+            border-radius: 2px 2px 0 0;
+        }
+    }
+
+    &gm-style-iw-t {
+        display: none!important;
+        position: unset!important;
+    }
+
+}
+
+/* PC対応 */
+@media only screen and (min-width: 1200px) {
+    .gm-style-iw {
+        width: 300px !important;
     }
 }
 
