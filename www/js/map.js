@@ -2,19 +2,6 @@ let infoWindow = []
 
 const REQUEST_URL = "https://api.rc-map.com/v1/all.json"
 
-for (let i = 0; i < locations.length; i++) {
-    // 数字でない
-    if (isNaN(locations[i].lat) || isNaN(locations[i].lng)) {
-        if (locations[i].lat === "" || locations[i].lng === "") {
-            locations[i].lat = 0
-            locations[i].lng = 0
-        }
-    } else {
-        locations[i].lat = parseFloat(locations[i].lat, 10);
-        locations[i].lng = parseFloat(locations[i].lng, 10);
-    }
-}
-
 let map;
 
 // Styleのオプション（名前非表示など）
@@ -37,6 +24,20 @@ async function getJsonData(url) {
 
 function initMap() {
     getJsonData(REQUEST_URL).then(function (locations) {
+
+        for (let i = 0; i < locations.length; i++) {
+            // 数字でない
+            if (isNaN(locations[i].lat) || isNaN(locations[i].lng)) {
+                if (locations[i].lat === "" || locations[i].lng === "") {
+                    locations[i].lat = 0
+                    locations[i].lng = 0
+                }
+            } else {
+                locations[i].lat = parseFloat(locations[i].lat, 10);
+                locations[i].lng = parseFloat(locations[i].lng, 10);
+            }
+        }
+        
         // 地図の作成
         let mapInfo = new google.maps.LatLng({
             lat: locations[0]['lat'],
