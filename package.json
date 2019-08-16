@@ -37,6 +37,7 @@
         ]
     },
     "scripts": {
+        "commit": "node ./node_modules/cz-customizable/standalone.js",
         "monaca:preview": "npm run dev",
         "dev": "browser-sync start -s www/ --watch --port 8080 --ui-port 8081",
         "scss": "node-sass --watch --include-path scss www/scss -o www/css --output-style compressed",
@@ -54,6 +55,7 @@
     "author": "yoshi1125hisa",
     "license": "UNLICENSED",
     "devDependencies": {
+        "cz-customizable": "^6.2.0",
         "@babel/core": "7.5.5",
         "autoprefixer": "9.6.1",
         "babel-loader": "8.0.6",
