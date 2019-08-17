@@ -148,8 +148,8 @@ p {
     }
 
     &gm-style-iw-t {
-        display: none!important;
-        position: unset!important;
+        display: none !important;
+        position: unset !important;
     }
 
 }
@@ -187,8 +187,10 @@ p {
 }
 
 ons- {
-    &list-item {
-        color: #444;
+    &list {
+        &-item {
+            color: #444;
+        }
     }
 
     &button,
@@ -212,4 +214,9 @@ ons- {
         margin: 3% 8%;
     }
 
+}
+
+.list-loading {
+    margin: 20px;
+    text-align: center !important;
 }

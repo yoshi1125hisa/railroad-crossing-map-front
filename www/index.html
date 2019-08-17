@@ -3,8 +3,10 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
-    <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
     <title>踏切マップ</title>
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
     <!-- <link rel="stylesheet" href="components/loader.css"> -->
@@ -158,7 +160,8 @@
         <ons-page id="Maps">
             <!-- <div class="progress-bar progress-bar--indeterminate">
           </div> -->
-            <ons-search-input class="search-input-map" placeholder="検索" onchange="ons.notification.alert('Searched for: ' + this.value)">
+            <ons-search-input class="search-input-map" placeholder="検索"
+                onchange="ons.notification.alert('Searched for: ' + this.value)">
             </ons-search-input>
             <div id="map"></div>
             <ons-fab position="bottom left" direction="up" onclick="getNowLocation()">
@@ -176,30 +179,38 @@
     </template>
 
     <template id="list.html">
-        <ons-page id="List">
+        <ons-page id="List" on-infinite-scroll="fn.loadMore">
             <!-- <div class="progress-bar progress-bar--indeterminate">
                 </div> -->
-            <ons-search-input class="search-input-list" placeholder="検索" onchange="ons.notification.alert('Searched for: ' + this.value)">
+            <ons-search-input class="search-input-list" placeholder="検索"
+                onchange="ons.notification.alert('Searched for: ' + this.value)">
             </ons-search-input>
             <ons-list-header>リスト</ons-list-header>
-            <ons-list>
-                <ons-lazy-repeat id="infinite-list"></ons-lazy-repeat>
-            </ons-list>
+            <ons-list id="list-node"></ons-list>
+            <div class="list-loading">
+                <ons-icon icon="fa-spinner" size="26px" spin></ons-icon>
+            </div>
+
 
             <script>
                 ons.getScriptPage().onInit = function () {
-                    var infiniteList = document.getElementById('infinite-list');
-
-                    infiniteList.delegate = {
-                        createItemContent: function (i) {
-                            return ons.createElement(`<ons-list-item>Item #${i}</ons-list-item>`);
-                        },
-                        countItems: function () {
-                            return 3000;
-                        }
-                    };
-
-                    infiniteList.refresh();
+                    var listNode = document.getElementById('list-node');
+                    var createListItem = function (i) {
+                        return ons.createElement(`<ons-list-item>Item #${i}</ons-list-item>`);
+                    }
+                    for (let i = 0; i < 30; i++) {
+                        listNode.appendChild(createListItem(i));
+                    }
+                    window.fn.loadMore = function (done) {
+                        setTimeout(() => {
+                                const listLength = listNode.children.length;
+                                for (let i = 0; i < 10; i++) {
+                                    listNode.appendChild(createListItem(listLength + i));
+                                }
+                                done();
+                            },
+                            600)
+                    }
                 }
             </script>
         </ons-page>
@@ -277,13 +288,14 @@
             </div>
         </ons-dialog>
     </template>
-  <script src="js/bundle/fn.bundle.js"></script>
-  <script src="js/map.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSUkT2q659t1_ktzpetp8AzJo0TgIr23A&language=ja&region=JP"
-    async defer></script>
-  <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
-  </script>
+    <script src="js/bundle/fn.bundle.js"></script>
+    <script src="js/map.js"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDSUkT2q659t1_ktzpetp8AzJo0TgIr23A&language=ja&region=JP"
+        async defer></script>
+    <script
+        src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
 
 </body>
 
