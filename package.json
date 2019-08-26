@@ -55,7 +55,7 @@
     "author": "yoshi1125hisa",
     "license": "UNLICENSED",
     "devDependencies": {
-        "cz-customizable": "^6.2.0",
+        "cz-customizable": "6.2.0",
         "@babel/core": "7.5.5",
         "autoprefixer": "9.6.1",
         "babel-loader": "8.0.6",
