@@ -90,7 +90,7 @@
   "devDependencies": {
     "angular": "1.7.8",
     "babel-core": "6.26.3",
-    "babel-eslint": "10.0.2",
+    "babel-eslint": "10.0.3",
     "babel-plugin-angularjs-annotate": "0.10.0",
     "babel-plugin-external-helpers": "6.22.0",
     "babel-plugin-transform-runtime": "6.23.0",
@@ -102,7 +102,7 @@
     "chai-spies": "1.0.0",
     "chalk": "2.4.2",
     "dateformat": "3.0.3",
-    "eslint": "6.2.1",
+    "eslint": "6.2.2",
     "event-stream": "4.0.1",
     "gulp": "4.0.2",
     "gulp-autoprefixer": "7.0.0",
@@ -138,7 +138,7 @@
     "mkpath": "1.0.0",
     "mocha": "6.2.0",
     "protractor": "5.4.2",
-    "rollup": "1.19.4",
+    "rollup": "1.20.2",
     "rollup-plugin-babel": "4.3.3",
     "rollup-plugin-commonjs": "10.0.2",
     "rollup-plugin-eslint": "7.0.0",
@@ -153,7 +153,7 @@
     "uglify-js": "3.6.0",
     "wcdoc": "0.1.19",
     "wdio-jasmine-framework": "0.3.8",
-    "webdriverio": "5.12.1",
+    "webdriverio": "5.12.4",
     "webpack-stream": "5.2.1"
   },
   "dependencies": {
