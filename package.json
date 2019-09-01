@@ -65,10 +65,10 @@
         "browserify": "16.5.0",
         "cordova": "9.0.0",
         "css-loader": "3.2.0",
-        "eslint": "6.2.2",
-        "eslint-config-standard": "14.0.1",
+        "eslint": "6.3.0",
+        "eslint-config-standard": "14.1.0",
         "eslint-plugin-import": "2.18.2",
-        "eslint-plugin-node": "9.1.0",
+        "eslint-plugin-node": "9.2.0",
         "eslint-plugin-promise": "4.2.1",
         "eslint-plugin-standard": "4.0.1",
         "grunt": "1.0.4",
@@ -81,7 +81,7 @@
         "style-loader": "1.0.0",
         "svg-inline-loader": "0.8.0",
         "vinyl-source-stream": "2.0.0",
-        "webpack": "4.39.2",
+        "webpack": "4.39.3",
         "webpack-cli": "3.3.7",
         "webpack-dev-server": "3.8.0"
     }
