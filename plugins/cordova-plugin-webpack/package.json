@@ -64,7 +64,7 @@
     "express": "4.17.1",
     "findup-sync": "4.0.0",
     "glob": "7.1.4",
-    "interpret": "1.2.0",
+    "interpret": "2.2.0",
     "ip": "1.1.5",
     "react-dev-utils": "9.0.3",
     "rechoir": "0.7.0",
