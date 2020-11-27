@@ -72,7 +72,7 @@
     "webpack": "4.39.3",
     "webpack-dev-server": "3.8.0",
     "webpack-inject-plugin": "1.5.3",
-    "yargs-parser": "13.1.1"
+    "yargs-parser": "13.1.2"
   },
   "deprecated": false,
   "description": "Cordova Webpack Plugin",
