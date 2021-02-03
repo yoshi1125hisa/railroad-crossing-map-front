@@ -1,7 +1,7 @@
 {
     "name": "rc-map",
     "dependencies": {
-        "@babel/polyfill": "7.4.4",
+        "@babel/polyfill": "7.12.1",
         "cheerio": "1.0.0-rc.3",
         "cordova-android": "8.0.0",
         "cordova-browser": "6.0.0",
@@ -56,9 +56,9 @@
     "license": "UNLICENSED",
     "devDependencies": {
         "cz-customizable": "6.2.0",
-        "@babel/core": "7.5.5",
+        "@babel/core": "7.12.13",
         "autoprefixer": "9.6.1",
-        "babel-loader": "8.0.6",
+        "babel-loader": "8.2.2",
         "babel-preset-es2015": "6.24.1",
         "babelify": "10.0.0",
         "browser-sync": "2.26.7",
