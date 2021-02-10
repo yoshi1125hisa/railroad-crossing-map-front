@@ -77,9 +77,9 @@
   "deprecated": false,
   "description": "Cordova Webpack Plugin",
   "devDependencies": {
-    "@commitlint/cli": "8.1.0",
-    "@commitlint/config-conventional": "8.1.0",
-    "@commitlint/prompt-cli": "8.1.0",
+    "@commitlint/cli": "8.3.5",
+    "@commitlint/config-conventional": "8.3.4",
+    "@commitlint/prompt-cli": "8.3.5",
     "@typescript-eslint/eslint-plugin": "2.0.0",
     "eslint": "6.3.0",
     "eslint-config-airbnb-base": "14.0.0",
