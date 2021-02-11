@@ -59,7 +59,7 @@
   "deprecated": false,
   "description": "Cordova Plugin to integrate browser-sync in the workflow",
   "devDependencies": {
-    "browserify": "16.5.0"
+    "browserify": "16.5.2"
   },
   "homepage": "https://github.com/axemclion/cordova-plugin-browsersync#readme",
   "id": "cordova-plugin-browsersync",
