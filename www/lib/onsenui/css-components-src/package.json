@@ -30,7 +30,7 @@
     "postcss-reporter": "6.0.1",
     "rimraf": "3.0.0",
     "run-sequence": "2.2.1",
-    "stylelint": "10.1.0"
+    "stylelint": "13.10.0"
   },
   "engines": {
     "node": ">=0.10.0"
